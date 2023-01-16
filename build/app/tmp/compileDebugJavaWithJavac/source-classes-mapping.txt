@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/iotecksolutions/todoapp/BuildConfig.java
+ com.iotecksolutions.todoapp.BuildConfig
+com/iotecksolutions/todoapp/MainActivity.java
+ com.iotecksolutions.todoapp.MainActivity
