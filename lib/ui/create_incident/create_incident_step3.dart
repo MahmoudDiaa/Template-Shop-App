@@ -117,11 +117,11 @@ class _IncidentFormStep3State extends State<IncidentFormStep3> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: TextFormField(
                                     initialValue: _incidentFormStore
-                                                ?.incident?.amountValue ==
+                                                .incident.amountValue ==
                                             null
                                         ? ''
                                         : _incidentFormStore
-                                            ?.incident?.amountValue
+                                            .incident.amountValue
                                             .toString(),
                                     autofocus: false,
                                     keyboardType: TextInputType.number,
@@ -174,7 +174,7 @@ class _IncidentFormStep3State extends State<IncidentFormStep3> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: TextFormField(
                                     initialValue:
-                                        _incidentFormStore?.incident?.notes,
+                                        _incidentFormStore.incident.notes,
                                     autofocus: false,
                                     keyboardType: TextInputType.multiline,
                                     maxLines: null,

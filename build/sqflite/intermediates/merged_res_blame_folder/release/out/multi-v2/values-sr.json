@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\gahezit\\flutter_boilerplate_orbits\\build\\sqflite\\intermediates\\merged_res\\release\\values-sr\\values-sr.xml",
+            "outputFile": "/Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/sqflite/intermediates/merged_res/release/values-sr/values-sr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\asd\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-sr\\values-sr.xml",
+                    "source": "/Users/mahmouddiaa/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/res/values-sr/values-sr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "D:\\gahezit\\flutter_boilerplate_orbits\\build\\sqflite\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sr\\values-sr.xml",
+            "outputFile": "/Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/sqflite/intermediates/incremental/mergeReleaseResources/merged.dir/values-sr/values-sr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\asd\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-sr\\values-sr.xml",
+                    "source": "/Users/mahmouddiaa/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/res/values-sr/values-sr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

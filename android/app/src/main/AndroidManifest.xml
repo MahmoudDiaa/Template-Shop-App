@@ -1,7 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.iotecksolutions.flutter_boilerplate_orbits">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="flutter_boilerplate_orbits"
+        tools:replace="android:label"
+       android:allowClearUserData="true"
+       android:usesCleartextTraffic="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

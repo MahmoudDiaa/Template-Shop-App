@@ -3,7 +3,7 @@ class Endpoints {
 
   // base url
   static const String baseUrl = "http://jsonplaceholder.typicode.com";
-  static const String baseUrl1 = "https://orbitsdc.com/api";
+  static const String baseUrl1 = "http://51.15.23.9:8085/api";
 
   // receiveTimeout
   static const int receiveTimeout = 15000;

@@ -279,10 +279,10 @@ class Incident {
     data['CategoryId'] = this.categoryId;
     data['SubCategoryId'] = this.subCategoryId;
     data['IsImagesBase64'] = true;
-    data['lat'] = this.mapPlace?.geometry?.location?.lat?.toString();
-    data['long'] = this.mapPlace?.geometry?.location?.lng?.toString();
-    data['districtName'] = mapPlace?.addressComponents?[1]?.longName;
-    data['streetName'] = mapPlace?.addressComponents?[0]?.longName;
+    data['lat'] = this.mapPlace?.geometry?.location.lat.toString()??"27.503035";
+    data['long'] = this.mapPlace?.geometry?.location.lng.toString()??"41.709509";
+    data['districtName'] = mapPlace?.addressComponents?[1].longName;
+    data['streetName'] = mapPlace?.addressComponents?[0].longName;
     data['address'] = mapPlace?.addressComponents == null
         ? null
         : mapPlace?.addressComponents?.map((e) => e.longName)?.toString();

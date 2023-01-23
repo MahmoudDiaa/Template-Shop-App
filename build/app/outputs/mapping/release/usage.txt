@@ -3238,6 +3238,8 @@ com.baseflow.geolocator.location.LocationManagerClient:
     private static final long TWO_MINUTES
 com.baseflow.geolocator.location.LocationMapper:
     public void <init>()
+com.baseflow.geolocator.location.NmeaClient:
+    public static final java.lang.String NMEA_ALTITUDE_EXTRA
 com.baseflow.geolocator.location.NotificationImportance
 com.baseflow.geolocator.permission.PermissionManager:
     private static final int PERMISSION_REQUEST_CODE
@@ -8618,12 +8620,8 @@ com.google.android.gms.common.annotation.KeepForSdkWithFieldsAndMethods
 com.google.android.gms.common.annotation.KeepForSdkWithMembers
 com.google.android.gms.common.annotation.NonNullApi
 com.google.android.gms.common.api.Api$ApiOptions$HasOptions
-com.google.android.gms.common.api.Api$ApiOptions$NoOptions
 com.google.android.gms.common.api.Api$ApiOptions$NotRequiredOptions
 com.google.android.gms.common.api.Api$ApiOptions$Optional
-com.google.android.gms.common.api.Api$ApiOptions:
-    public static final com.google.android.gms.common.api.Api$ApiOptions$NoOptions NO_OPTIONS
-    static void <clinit>()
 com.google.android.gms.common.api.Api$BaseClientBuilder:
     public static final int API_PRIORITY_GAMES
     public static final int API_PRIORITY_OTHER
@@ -8638,6 +8636,7 @@ com.google.android.gms.common.api.Api$Client:
     public abstract boolean providesSignIn()
     public abstract boolean requiresAccount()
 com.google.android.gms.common.api.Api:
+    public final com.google.android.gms.common.api.Api$AnyClientKey zab()
     public final com.google.android.gms.common.api.Api$BaseClientBuilder zac()
 com.google.android.gms.common.api.ApiException:
     public java.lang.String getStatusMessage()
@@ -8671,17 +8670,26 @@ com.google.android.gms.common.api.CommonStatusCodes:
     public static final int TIMEOUT
     protected void <init>()
 com.google.android.gms.common.api.DataBufferResponse
+com.google.android.gms.common.api.GoogleApi$Settings$Builder:
+    public com.google.android.gms.common.api.GoogleApi$Settings$Builder setLooper(android.os.Looper)
+    public com.google.android.gms.common.api.GoogleApi$Settings$Builder setMapper(com.google.android.gms.common.api.internal.StatusExceptionMapper)
 com.google.android.gms.common.api.GoogleApi:
+    public void <init>(android.app.Activity,com.google.android.gms.common.api.Api,com.google.android.gms.common.api.Api$ApiOptions,com.google.android.gms.common.api.internal.StatusExceptionMapper)
     public void <init>(android.content.Context,com.google.android.gms.common.api.Api,com.google.android.gms.common.api.Api$ApiOptions,android.os.Looper,com.google.android.gms.common.api.internal.StatusExceptionMapper)
+    public void <init>(android.content.Context,com.google.android.gms.common.api.Api,com.google.android.gms.common.api.Api$ApiOptions,com.google.android.gms.common.api.internal.StatusExceptionMapper)
+    public com.google.android.gms.common.api.GoogleApiClient asGoogleApiClient()
     protected com.google.android.gms.tasks.Task disconnectService()
     public com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl doBestEffortWrite(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
-    public com.google.android.gms.tasks.Task doRegisterEventListener(com.google.android.gms.common.api.internal.RegistrationMethods)
+    public com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl doRead(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
+    public com.google.android.gms.tasks.Task doRegisterEventListener(com.google.android.gms.common.api.internal.RegisterListenerMethod,com.google.android.gms.common.api.internal.UnregisterListenerMethod)
     public com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl doWrite(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
     public com.google.android.gms.tasks.Task doWrite(com.google.android.gms.common.api.internal.TaskApiCall)
     public com.google.android.gms.common.api.Api$ApiOptions getApiOptions()
     public android.content.Context getApplicationContext()
     protected java.lang.String getContextFeatureId()
+    public android.os.Looper getLooper()
     public com.google.android.gms.common.api.internal.ListenerHolder registerListener(java.lang.Object,java.lang.String)
+    private final com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl zad(int,com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
 com.google.android.gms.common.api.GoogleApiClient$Builder
 com.google.android.gms.common.api.GoogleApiClient$ConnectionCallbacks:
     public static final int CAUSE_NETWORK_LOST
@@ -8698,11 +8706,13 @@ com.google.android.gms.common.api.GoogleApiClient:
     public abstract void disconnect()
     public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
     public static void dumpAll(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+    public com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl enqueue(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
     public com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl execute(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
     public static java.util.Set getAllClients()
     public com.google.android.gms.common.api.Api$Client getClient(com.google.android.gms.common.api.Api$AnyClientKey)
     public abstract com.google.android.gms.common.ConnectionResult getConnectionResult(com.google.android.gms.common.api.Api)
     public android.content.Context getContext()
+    public android.os.Looper getLooper()
     public boolean hasApi(com.google.android.gms.common.api.Api)
     public abstract boolean hasConnectedApi(com.google.android.gms.common.api.Api)
     public abstract boolean isConnected()
@@ -8724,7 +8734,9 @@ com.google.android.gms.common.api.GoogleApiClient:
 com.google.android.gms.common.api.HasApiKey
 com.google.android.gms.common.api.OptionalPendingResult
 com.google.android.gms.common.api.PendingResult:
+    public void addStatusListener(com.google.android.gms.common.api.PendingResult$StatusListener)
     public abstract com.google.android.gms.common.api.Result await()
+    public abstract com.google.android.gms.common.api.Result await(long,java.util.concurrent.TimeUnit)
     public abstract void cancel()
     public abstract boolean isCanceled()
     public abstract void setResultCallback(com.google.android.gms.common.api.ResultCallback)
@@ -8735,38 +8747,37 @@ com.google.android.gms.common.api.ResolvableApiException:
     public android.app.PendingIntent getResolution()
 com.google.android.gms.common.api.ResolvingResultCallbacks
 com.google.android.gms.common.api.Response:
-    protected void <init>(com.google.android.gms.common.api.Result)
+    public void setResult(com.google.android.gms.common.api.Result)
 com.google.android.gms.common.api.ResultCallbacks
 com.google.android.gms.common.api.ResultTransform
 com.google.android.gms.common.api.Status:
+    public void <init>(int,java.lang.String,android.app.PendingIntent)
     public android.app.PendingIntent getResolution()
     public boolean isCanceled()
     public boolean isInterrupted()
-com.google.android.gms.common.api.TransformedResult:
-    public void <init>()
-    public abstract void andFinally(com.google.android.gms.common.api.ResultCallbacks)
-    public abstract com.google.android.gms.common.api.TransformedResult then(com.google.android.gms.common.api.ResultTransform)
+com.google.android.gms.common.api.TransformedResult
 com.google.android.gms.common.api.internal.ActivityLifecycleObserver
-com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl:
-    protected void <init>(com.google.android.gms.common.api.Api$AnyClientKey,com.google.android.gms.common.api.GoogleApiClient)
-    protected void <init>(com.google.android.gms.common.api.internal.BasePendingResult$CallbackHandler)
-    public final com.google.android.gms.common.api.Api getApi()
-    public final com.google.android.gms.common.api.Api$AnyClientKey getClientKey()
+com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl
 com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder:
     public abstract void setFailedResult(com.google.android.gms.common.api.Status)
 com.google.android.gms.common.api.internal.BaseImplementation
 com.google.android.gms.common.api.internal.BasePendingResult$CallbackHandler:
     public void <init>()
 com.google.android.gms.common.api.internal.BasePendingResult:
+    private volatile com.google.android.gms.common.api.internal.zada zap
     protected void <init>(android.os.Looper)
+    protected void <init>(com.google.android.gms.common.api.GoogleApiClient)
     protected void <init>(com.google.android.gms.common.api.internal.BasePendingResult$CallbackHandler)
+    public final void addStatusListener(com.google.android.gms.common.api.PendingResult$StatusListener)
     public final com.google.android.gms.common.api.Result await()
+    public final com.google.android.gms.common.api.Result await(long,java.util.concurrent.TimeUnit)
     public void cancel()
     public final boolean isCanceled()
     protected final void setCancelToken(com.google.android.gms.common.internal.ICancelToken)
     public final void setResultCallback(com.google.android.gms.common.api.ResultCallback)
     public final void setResultCallback(com.google.android.gms.common.api.ResultCallback,long,java.util.concurrent.TimeUnit)
     public final com.google.android.gms.common.api.TransformedResult then(com.google.android.gms.common.api.ResultTransform)
+    public final void zak()
     public final boolean zam()
     public final void zan(com.google.android.gms.common.api.internal.zadb)
 com.google.android.gms.common.api.internal.DataHolderNotifier
@@ -8776,9 +8787,10 @@ com.google.android.gms.common.api.internal.GoogleApiManager:
     public static com.google.android.gms.common.api.internal.GoogleApiManager zal()
     public final com.google.android.gms.tasks.Task zao(java.lang.Iterable)
     public final com.google.android.gms.tasks.Task zap(com.google.android.gms.common.api.GoogleApi)
+    public final void zaw(com.google.android.gms.common.api.GoogleApi,int,com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
 com.google.android.gms.common.api.internal.GoogleServices
-com.google.android.gms.common.api.internal.IStatusCallback$Stub
-com.google.android.gms.common.api.internal.IStatusCallback
+com.google.android.gms.common.api.internal.IStatusCallback$Stub:
+    public static com.google.android.gms.common.api.internal.IStatusCallback asInterface(android.os.IBinder)
 com.google.android.gms.common.api.internal.LifecycleActivity:
     public void <init>(android.content.ContextWrapper)
 com.google.android.gms.common.api.internal.LifecycleCallback:
@@ -8786,8 +8798,6 @@ com.google.android.gms.common.api.internal.LifecycleCallback:
 com.google.android.gms.common.api.internal.LifecycleFragment:
     public abstract boolean isCreated()
     public abstract boolean isStarted()
-com.google.android.gms.common.api.internal.ListenerHolder$ListenerKey:
-    public java.lang.String toIdString()
 com.google.android.gms.common.api.internal.ListenerHolder:
     void <init>(java.util.concurrent.Executor,java.lang.Object,java.lang.String)
     public boolean hasListener()
@@ -8811,21 +8821,31 @@ com.google.android.gms.common.api.internal.NonGmsServiceBrokerClient:
 com.google.android.gms.common.api.internal.OptionalPendingResultImpl
 com.google.android.gms.common.api.internal.PendingResultFacade
 com.google.android.gms.common.api.internal.RegisterListenerMethod:
+    protected void <init>(com.google.android.gms.common.api.internal.ListenerHolder)
     protected void <init>(com.google.android.gms.common.api.internal.ListenerHolder,com.google.android.gms.common.Feature[],boolean)
-com.google.android.gms.common.api.internal.RegistrationMethods$Builder
-com.google.android.gms.common.api.internal.RegistrationMethods
+com.google.android.gms.common.api.internal.RegistrationMethods$Builder:
+    private void <init>()
+    public com.google.android.gms.common.api.internal.RegistrationMethods$Builder onConnectionSuspended(java.lang.Runnable)
+    public com.google.android.gms.common.api.internal.RegistrationMethods$Builder setAutoResolveMissingFeatures(boolean)
+    public varargs com.google.android.gms.common.api.internal.RegistrationMethods$Builder setFeatures(com.google.android.gms.common.Feature[])
 com.google.android.gms.common.api.internal.SignInConnectionListener
 com.google.android.gms.common.api.internal.StatusCallback
 com.google.android.gms.common.api.internal.StatusPendingResult
 com.google.android.gms.common.api.internal.TaskApiCall$Builder:
     private void <init>()
     public com.google.android.gms.common.api.internal.TaskApiCall$Builder execute(com.google.android.gms.common.util.BiConsumer)
-    public com.google.android.gms.common.api.internal.TaskApiCall$Builder setMethodKey(int)
+com.google.android.gms.common.api.internal.TaskApiCall:
+    public void <init>()
 com.google.android.gms.common.api.internal.TaskUtil:
     public void <init>()
+    public static com.google.android.gms.tasks.Task toVoidTaskThatFailsOnFalse(com.google.android.gms.tasks.Task)
     public static boolean trySetResultOrApiException(com.google.android.gms.common.api.Status,java.lang.Object,com.google.android.gms.tasks.TaskCompletionSource)
 com.google.android.gms.common.api.internal.zaa
 com.google.android.gms.common.api.internal.zaaa
+com.google.android.gms.common.api.internal.zaab
+com.google.android.gms.common.api.internal.zaad:
+    static synthetic bridge java.util.Map zaa(com.google.android.gms.common.api.internal.zaad)
+    final void zac(com.google.android.gms.common.api.internal.BasePendingResult,boolean)
 com.google.android.gms.common.api.internal.zaaf:
     public void <init>(com.google.android.gms.common.api.internal.ApiKey)
 com.google.android.gms.common.api.internal.zaag:
@@ -8880,54 +8900,25 @@ com.google.android.gms.common.api.internal.zabj
 com.google.android.gms.common.api.internal.zabq:
     public final void zaa(com.google.android.gms.common.ConnectionResult,com.google.android.gms.common.api.Api,boolean)
 com.google.android.gms.common.api.internal.zabv:
+    public final com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl enqueue(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
     public final com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl execute(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
     public final android.content.Context getContext()
+    public final android.os.Looper getLooper()
     public final void zao(com.google.android.gms.common.api.internal.zada)
     public final void zap(com.google.android.gms.common.api.internal.zada)
 com.google.android.gms.common.api.internal.zaby
 com.google.android.gms.common.api.internal.zabz
 com.google.android.gms.common.api.internal.zaca
 com.google.android.gms.common.api.internal.zacc
-com.google.android.gms.common.api.internal.zacj
-com.google.android.gms.common.api.internal.zack
-com.google.android.gms.common.api.internal.zacl
-com.google.android.gms.common.api.internal.zacm
-com.google.android.gms.common.api.internal.zacn
 com.google.android.gms.common.api.internal.zaco
 com.google.android.gms.common.api.internal.zacp
 com.google.android.gms.common.api.internal.zacu
+com.google.android.gms.common.api.internal.zacx
 com.google.android.gms.common.api.internal.zacy
 com.google.android.gms.common.api.internal.zacz
 com.google.android.gms.common.api.internal.zad:
     public void zag(com.google.android.gms.common.api.internal.zaad,boolean)
-com.google.android.gms.common.api.internal.zada:
-    private com.google.android.gms.common.api.ResultTransform zaa
-    private com.google.android.gms.common.api.internal.zada zab
-    private volatile com.google.android.gms.common.api.ResultCallbacks zac
-    private com.google.android.gms.common.api.PendingResult zad
-    private final java.lang.Object zae
-    private com.google.android.gms.common.api.Status zaf
-    private final java.lang.ref.WeakReference zag
-    private final com.google.android.gms.common.api.internal.zacz zah
-    private boolean zai
-    public void <init>(java.lang.ref.WeakReference)
-    public final void andFinally(com.google.android.gms.common.api.ResultCallbacks)
-    public final void onResult(com.google.android.gms.common.api.Result)
-    public final com.google.android.gms.common.api.TransformedResult then(com.google.android.gms.common.api.ResultTransform)
-    static synthetic bridge com.google.android.gms.common.api.ResultTransform zaa(com.google.android.gms.common.api.internal.zada)
-    static synthetic bridge com.google.android.gms.common.api.internal.zacz zab(com.google.android.gms.common.api.internal.zada)
-    static synthetic bridge com.google.android.gms.common.api.internal.zada zac(com.google.android.gms.common.api.internal.zada)
-    static synthetic bridge java.lang.Object zad(com.google.android.gms.common.api.internal.zada)
-    static synthetic bridge java.lang.ref.WeakReference zae(com.google.android.gms.common.api.internal.zada)
-    static synthetic bridge void zaf(com.google.android.gms.common.api.internal.zada,com.google.android.gms.common.api.Result)
-    static synthetic bridge void zag(com.google.android.gms.common.api.internal.zada,com.google.android.gms.common.api.Status)
-    final void zah()
-    public final void zai(com.google.android.gms.common.api.PendingResult)
-    private final void zaj(com.google.android.gms.common.api.Status)
-    private final void zak()
-    private final void zal(com.google.android.gms.common.api.Status)
-    private final boolean zam()
-    private static final void zan(com.google.android.gms.common.api.Result)
+com.google.android.gms.common.api.internal.zada
 com.google.android.gms.common.api.internal.zadb:
     void <init>(com.google.android.gms.common.api.internal.zadc)
 com.google.android.gms.common.api.internal.zadc:
@@ -8937,6 +8928,7 @@ com.google.android.gms.common.api.internal.zadc:
     public void <init>()
     final void zaa(com.google.android.gms.common.api.internal.BasePendingResult)
     public final void zab()
+com.google.android.gms.common.api.internal.zae
 com.google.android.gms.common.api.internal.zaj
 com.google.android.gms.common.api.internal.zak
 com.google.android.gms.common.api.internal.zal:
@@ -8955,9 +8947,9 @@ com.google.android.gms.common.api.internal.zzb:
 com.google.android.gms.common.api.internal.zzd:
     public final boolean isCreated()
     public final boolean isStarted()
-com.google.android.gms.common.api.zaa
 com.google.android.gms.common.api.zab
 com.google.android.gms.common.api.zac
+com.google.android.gms.common.api.zad
 com.google.android.gms.common.api.zaf
 com.google.android.gms.common.api.zag
 com.google.android.gms.common.api.zah
@@ -9068,13 +9060,13 @@ com.google.android.gms.common.internal.MethodInvocation:
 com.google.android.gms.common.internal.Objects:
     private void <init>()
     public static boolean checkBundlesEquality(android.os.Bundle,android.os.Bundle)
-com.google.android.gms.common.internal.PendingResultUtil:
-    public void <init>()
-    public static com.google.android.gms.tasks.Task toVoidTask(com.google.android.gms.common.api.PendingResult)
+com.google.android.gms.common.internal.PendingResultUtil$ResultConverter
+com.google.android.gms.common.internal.PendingResultUtil
 com.google.android.gms.common.internal.Preconditions:
     private void <init>()
     public static void checkHandlerThread(android.os.Handler,java.lang.String)
     public static void checkNotMainThread()
+    public static void checkNotMainThread(java.lang.String)
     public static int checkNotZero(int)
     public static int checkNotZero(int,java.lang.Object)
     public static long checkNotZero(long)
@@ -9204,7 +9196,11 @@ com.google.android.gms.common.internal.zak
 com.google.android.gms.common.internal.zal:
     public void <init>()
 com.google.android.gms.common.internal.zam
+com.google.android.gms.common.internal.zao
+com.google.android.gms.common.internal.zap
+com.google.android.gms.common.internal.zaq
 com.google.android.gms.common.internal.zar
+com.google.android.gms.common.internal.zas
 com.google.android.gms.common.internal.zav:
     public final boolean zac()
     public final boolean zad()
@@ -9483,83 +9479,122 @@ com.google.android.gms.internal.common.zzw
 com.google.android.gms.internal.common.zzx
 com.google.android.gms.internal.common.zzy
 com.google.android.gms.internal.common.zzz
-com.google.android.gms.internal.location.zza:
-    protected final void transactOneway(int,android.os.Parcel)
-com.google.android.gms.internal.location.zzaa
-com.google.android.gms.internal.location.zzab
 com.google.android.gms.internal.location.zzac
+com.google.android.gms.internal.location.zzad
+com.google.android.gms.internal.location.zzae
 com.google.android.gms.internal.location.zzaf:
     public final com.google.android.gms.common.api.PendingResult addGeofences(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.location.GeofencingRequest,android.app.PendingIntent)
     public final com.google.android.gms.common.api.PendingResult addGeofences(com.google.android.gms.common.api.GoogleApiClient,java.util.List,android.app.PendingIntent)
     public final com.google.android.gms.common.api.PendingResult removeGeofences(com.google.android.gms.common.api.GoogleApiClient,android.app.PendingIntent)
     public final com.google.android.gms.common.api.PendingResult removeGeofences(com.google.android.gms.common.api.GoogleApiClient,java.util.List)
-    private final com.google.android.gms.common.api.PendingResult zza(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.location.zzal)
-com.google.android.gms.internal.location.zzag
-com.google.android.gms.internal.location.zzah
-com.google.android.gms.internal.location.zzai
+    public final com.google.android.gms.common.api.PendingResult zza(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.location.zzbx)
+com.google.android.gms.internal.location.zzag:
+    public final void zzb(com.google.android.gms.internal.location.zzaa)
+    public final void zzc()
+com.google.android.gms.internal.location.zzaj
+com.google.android.gms.internal.location.zzak
 com.google.android.gms.internal.location.zzal:
-    public final void zza(com.google.android.gms.internal.location.zzad)
-com.google.android.gms.internal.location.zzam
-com.google.android.gms.internal.location.zzan
-com.google.android.gms.internal.location.zzao:
-    public abstract void zza(long,boolean,android.app.PendingIntent)
-    public abstract void zza(android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
-    public abstract void zza(android.location.Location)
-    public abstract void zza(com.google.android.gms.internal.location.zzaj)
-    public abstract void zza(com.google.android.gms.location.ActivityTransitionRequest,android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
-    public abstract void zza(com.google.android.gms.location.GeofencingRequest,android.app.PendingIntent,com.google.android.gms.internal.location.zzam)
-    public abstract void zza(com.google.android.gms.location.zzal,com.google.android.gms.internal.location.zzam)
-    public abstract com.google.android.gms.location.LocationAvailability zzb(java.lang.String)
-    public abstract void zzb(android.app.PendingIntent)
-com.google.android.gms.internal.location.zzap:
-    public final void zza(long,boolean,android.app.PendingIntent)
-    public final void zza(android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
-    public final void zza(android.location.Location)
-    public final void zza(com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.location.ActivityTransitionRequest,android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
-    public final void zza(com.google.android.gms.location.GeofencingRequest,android.app.PendingIntent,com.google.android.gms.internal.location.zzam)
-    public final void zza(com.google.android.gms.location.zzal,com.google.android.gms.internal.location.zzam)
-    public final com.google.android.gms.location.LocationAvailability zzb(java.lang.String)
-    public final void zzb(android.app.PendingIntent)
-com.google.android.gms.internal.location.zzas:
-    private final com.google.android.gms.internal.location.zzax zza(com.google.android.gms.common.api.internal.ListenerHolder)
-    public final com.google.android.gms.location.LocationAvailability zza()
-    public final void zza(android.app.PendingIntent,com.google.android.gms.internal.location.zzaj)
-    public final void zza(android.location.Location)
-    public final void zza(com.google.android.gms.common.api.internal.ListenerHolder$ListenerKey,com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.location.LocationRequest,android.app.PendingIntent,com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.location.LocationRequest,com.google.android.gms.common.api.internal.ListenerHolder,com.google.android.gms.internal.location.zzaj)
-com.google.android.gms.internal.location.zzax:
-    void <init>(com.google.android.gms.common.api.internal.ListenerHolder)
-    public final synchronized void release()
-com.google.android.gms.internal.location.zzaz:
-    public void <init>(android.content.Context,android.os.Looper,com.google.android.gms.common.api.GoogleApiClient$ConnectionCallbacks,com.google.android.gms.common.api.GoogleApiClient$OnConnectionFailedListener,java.lang.String)
-    public final com.google.android.gms.location.LocationAvailability zza()
-    public final void zza(long,android.app.PendingIntent)
-    public final void zza(android.app.PendingIntent,com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder)
-    public final void zza(android.app.PendingIntent,com.google.android.gms.internal.location.zzaj)
-    public final void zza(android.location.Location)
-    public final void zza(com.google.android.gms.common.api.internal.ListenerHolder$ListenerKey,com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.location.ActivityTransitionRequest,android.app.PendingIntent,com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder)
-    public final void zza(com.google.android.gms.location.GeofencingRequest,android.app.PendingIntent,com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder)
-    public final void zza(com.google.android.gms.location.LocationRequest,android.app.PendingIntent,com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.location.LocationRequest,com.google.android.gms.common.api.internal.ListenerHolder,com.google.android.gms.internal.location.zzaj)
-    public final void zza(com.google.android.gms.location.zzal,com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder)
-    public final void zza(boolean)
-    public final void zzb(android.app.PendingIntent)
+    public final com.google.android.gms.common.internal.ICancelToken zze(com.google.android.gms.location.CurrentLocationRequest,com.google.android.gms.internal.location.zzao)
+    public final com.google.android.gms.location.LocationAvailability zzf(java.lang.String)
+    public final void zzg(com.google.android.gms.location.GeofencingRequest,android.app.PendingIntent,com.google.android.gms.internal.location.zzak)
+    public final void zzi(com.google.android.gms.internal.location.zzai)
+    public final void zzk(android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public final void zzl(android.app.PendingIntent)
+    public final void zzm(com.google.android.gms.location.zzbx,com.google.android.gms.internal.location.zzak)
+    public final void zzn(android.app.PendingIntent,com.google.android.gms.internal.location.zzak,java.lang.String)
+    public final void zzo(java.lang.String[],com.google.android.gms.internal.location.zzak,java.lang.String)
+    public final void zzp(android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public final void zzq(com.google.android.gms.location.ActivityTransitionRequest,android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public final void zzr(long,boolean,android.app.PendingIntent)
+    public final void zzs(com.google.android.gms.location.zzl,android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public final void zzt(android.app.PendingIntent,com.google.android.gms.location.SleepSegmentRequest,com.google.android.gms.common.api.internal.IStatusCallback)
+    public final void zzu(android.location.Location)
+    public final void zzv(android.location.Location,com.google.android.gms.common.api.internal.IStatusCallback)
+com.google.android.gms.internal.location.zzam:
+    public abstract com.google.android.gms.common.internal.ICancelToken zze(com.google.android.gms.location.CurrentLocationRequest,com.google.android.gms.internal.location.zzao)
+    public abstract com.google.android.gms.location.LocationAvailability zzf(java.lang.String)
+    public abstract void zzg(com.google.android.gms.location.GeofencingRequest,android.app.PendingIntent,com.google.android.gms.internal.location.zzak)
+    public abstract void zzi(com.google.android.gms.internal.location.zzai)
+    public abstract void zzk(android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public abstract void zzl(android.app.PendingIntent)
+    public abstract void zzm(com.google.android.gms.location.zzbx,com.google.android.gms.internal.location.zzak)
+    public abstract void zzn(android.app.PendingIntent,com.google.android.gms.internal.location.zzak,java.lang.String)
+    public abstract void zzo(java.lang.String[],com.google.android.gms.internal.location.zzak,java.lang.String)
+    public abstract void zzp(android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public abstract void zzq(com.google.android.gms.location.ActivityTransitionRequest,android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public abstract void zzr(long,boolean,android.app.PendingIntent)
+    public abstract void zzs(com.google.android.gms.location.zzl,android.app.PendingIntent,com.google.android.gms.common.api.internal.IStatusCallback)
+    public abstract void zzt(android.app.PendingIntent,com.google.android.gms.location.SleepSegmentRequest,com.google.android.gms.common.api.internal.IStatusCallback)
+    public abstract void zzu(android.location.Location)
+    public abstract void zzv(android.location.Location,com.google.android.gms.common.api.internal.IStatusCallback)
+com.google.android.gms.internal.location.zzar
+com.google.android.gms.internal.location.zzas
+com.google.android.gms.internal.location.zzau
+com.google.android.gms.internal.location.zzav
 com.google.android.gms.internal.location.zzba
-com.google.android.gms.internal.location.zzbb
-com.google.android.gms.internal.location.zzbh
-com.google.android.gms.internal.location.zzbi
+com.google.android.gms.internal.location.zzbc:
+    void <init>(com.google.android.gms.common.api.internal.ListenerHolder)
+    public final synchronized void zzc()
+com.google.android.gms.internal.location.zzbe:
+    public static final synthetic int zze
+    public final void zzA(android.app.PendingIntent,com.google.android.gms.internal.location.zzai)
+    public final void zzC(com.google.android.gms.internal.location.zzbf,com.google.android.gms.common.api.internal.ListenerHolder,com.google.android.gms.internal.location.zzai)
+    public final void zzD(com.google.android.gms.internal.location.zzbf,android.app.PendingIntent,com.google.android.gms.internal.location.zzai)
+    public final void zzE(android.location.Location,com.google.android.gms.common.api.internal.IStatusCallback)
+    public final com.google.android.gms.location.LocationAvailability zzp()
+    public final void zzq(com.google.android.gms.location.GeofencingRequest,android.app.PendingIntent,com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder)
+    public final void zzs(com.google.android.gms.internal.location.zzai)
+    public final void zzt(com.google.android.gms.location.CurrentLocationRequest,com.google.android.gms.tasks.CancellationToken,com.google.android.gms.internal.location.zzao)
+    public final void zzv(android.app.PendingIntent)
+    public final void zzw(android.app.PendingIntent,com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder)
+    public final void zzx(java.util.List,com.google.android.gms.common.api.internal.BaseImplementation$ResultHolder)
+    public final void zzz(com.google.android.gms.common.api.internal.ListenerHolder$ListenerKey,com.google.android.gms.internal.location.zzai)
+com.google.android.gms.internal.location.zzbf:
+    public final long zza()
+    public final com.google.android.gms.location.LocationRequest zzb()
+    public final com.google.android.gms.internal.location.zzbf zzd(boolean)
+    public final com.google.android.gms.internal.location.zzbf zze(long)
+    public final java.util.List zzf()
+    public final boolean zzg()
+com.google.android.gms.internal.location.zzbj
+com.google.android.gms.internal.location.zzbk
+com.google.android.gms.internal.location.zzbl
+com.google.android.gms.internal.location.zzbm:
+    public final com.google.android.gms.common.api.PendingResult checkLocationSettings(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.location.LocationSettingsRequest)
+com.google.android.gms.internal.location.zzbn
+com.google.android.gms.internal.location.zzbu:
+    public synthetic bridge java.util.Iterator iterator()
+    public com.google.android.gms.internal.location.zzbx zzd()
+    public abstract com.google.android.gms.internal.location.zzbz zze()
+    abstract boolean zzf()
+com.google.android.gms.internal.location.zzbw:
+    final boolean zzf()
+com.google.android.gms.internal.location.zzbx:
+    public final com.google.android.gms.internal.location.zzbx zzd()
+    public final com.google.android.gms.internal.location.zzbz zze()
+    static com.google.android.gms.internal.location.zzbx zzi(java.lang.Object[],int)
+    public static com.google.android.gms.internal.location.zzbx zzj(java.util.Collection)
+com.google.android.gms.internal.location.zzby:
+    final boolean zzf()
+com.google.android.gms.internal.location.zzd
 com.google.android.gms.internal.location.zze
 com.google.android.gms.internal.location.zzf
 com.google.android.gms.internal.location.zzg
-com.google.android.gms.internal.location.zzh
-com.google.android.gms.internal.location.zzi
-com.google.android.gms.internal.location.zzj
-com.google.android.gms.internal.location.zzq:
+com.google.android.gms.internal.location.zzl
+com.google.android.gms.internal.location.zzm
+com.google.android.gms.internal.location.zzn
+com.google.android.gms.internal.location.zzo
+com.google.android.gms.internal.location.zzp
+com.google.android.gms.internal.location.zzq
+com.google.android.gms.internal.location.zzr
+com.google.android.gms.internal.location.zzs
+com.google.android.gms.internal.location.zzt
+com.google.android.gms.internal.location.zzu
+com.google.android.gms.internal.location.zzv
+com.google.android.gms.internal.location.zzw
+com.google.android.gms.internal.location.zzx
+com.google.android.gms.internal.location.zzy
+com.google.android.gms.internal.location.zzz:
     public final com.google.android.gms.common.api.PendingResult flushLocations(com.google.android.gms.common.api.GoogleApiClient)
     public final android.location.Location getLastLocation(com.google.android.gms.common.api.GoogleApiClient)
     public final com.google.android.gms.location.LocationAvailability getLocationAvailability(com.google.android.gms.common.api.GoogleApiClient)
@@ -9572,16 +9607,34 @@ com.google.android.gms.internal.location.zzq:
     public final com.google.android.gms.common.api.PendingResult requestLocationUpdates(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.location.LocationRequest,com.google.android.gms.location.LocationListener,android.os.Looper)
     public final com.google.android.gms.common.api.PendingResult setMockLocation(com.google.android.gms.common.api.GoogleApiClient,android.location.Location)
     public final com.google.android.gms.common.api.PendingResult setMockMode(com.google.android.gms.common.api.GoogleApiClient,boolean)
-com.google.android.gms.internal.location.zzr
-com.google.android.gms.internal.location.zzs
-com.google.android.gms.internal.location.zzt
-com.google.android.gms.internal.location.zzu
-com.google.android.gms.internal.location.zzv
-com.google.android.gms.internal.location.zzw
-com.google.android.gms.internal.location.zzx
-com.google.android.gms.internal.location.zzy
-com.google.android.gms.internal.location.zzz
 com.google.android.gms.internal.maps.zzaa:
+    public abstract boolean zzD()
+    public abstract boolean zzE()
+    public abstract boolean zzG()
+    public abstract float zzd()
+    public abstract float zze()
+    public abstract float zzf()
+    public abstract com.google.android.gms.dynamic.IObjectWrapper zzh()
+    public abstract java.lang.String zzk()
+    public abstract java.lang.String zzl()
+    public abstract void zzx(com.google.android.gms.dynamic.IObjectWrapper)
+com.google.android.gms.internal.maps.zzab:
+    public final boolean zzC()
+    public final boolean zzD()
+    public final boolean zzE()
+    public final float zzd()
+    public final float zze()
+    public final int zzf()
+    public final int zzg()
+    public final int zzh()
+    public final com.google.android.gms.dynamic.IObjectWrapper zzj()
+    public final java.util.List zzl()
+    public final java.util.List zzm()
+    public final java.util.List zzn()
+    public final void zzv(int)
+    public final void zzw(java.util.List)
+    public final void zzy(com.google.android.gms.dynamic.IObjectWrapper)
+com.google.android.gms.internal.maps.zzad:
     public abstract boolean zzC()
     public abstract boolean zzD()
     public abstract boolean zzE()
@@ -9597,10 +9650,10 @@ com.google.android.gms.internal.maps.zzaa:
     public abstract void zzv(int)
     public abstract void zzw(java.util.List)
     public abstract void zzy(com.google.android.gms.dynamic.IObjectWrapper)
-com.google.android.gms.internal.maps.zzab:
-    public final boolean zzC()
-    public final boolean zzD()
+com.google.android.gms.internal.maps.zzae:
     public final boolean zzE()
+    public final boolean zzF()
+    public final boolean zzG()
     public final float zzd()
     public final float zze()
     public final int zzf()
@@ -9610,11 +9663,13 @@ com.google.android.gms.internal.maps.zzab:
     public final com.google.android.gms.maps.model.Cap zzk()
     public final java.util.List zzm()
     public final java.util.List zzn()
-    public final void zzx(com.google.android.gms.dynamic.IObjectWrapper)
-com.google.android.gms.internal.maps.zzad:
-    public abstract boolean zzC()
-    public abstract boolean zzD()
+    public final java.util.List zzo()
+    public final void zzx(java.util.List)
+    public final void zzz(com.google.android.gms.dynamic.IObjectWrapper)
+com.google.android.gms.internal.maps.zzag:
     public abstract boolean zzE()
+    public abstract boolean zzF()
+    public abstract boolean zzG()
     public abstract float zzd()
     public abstract float zze()
     public abstract int zzf()
@@ -9624,7 +9679,9 @@ com.google.android.gms.internal.maps.zzad:
     public abstract com.google.android.gms.maps.model.Cap zzk()
     public abstract java.util.List zzm()
     public abstract java.util.List zzn()
-    public abstract void zzx(com.google.android.gms.dynamic.IObjectWrapper)
+    public abstract java.util.List zzo()
+    public abstract void zzx(java.util.List)
+    public abstract void zzz(com.google.android.gms.dynamic.IObjectWrapper)
 com.google.android.gms.internal.maps.zzc:
     public static java.util.ArrayList zzb(android.os.Parcel)
 com.google.android.gms.internal.maps.zzd
@@ -9673,7 +9730,10 @@ com.google.android.gms.internal.maps.zzr
 com.google.android.gms.internal.maps.zzs
 com.google.android.gms.internal.maps.zzt
 com.google.android.gms.internal.maps.zzu
-com.google.android.gms.internal.maps.zzv:
+com.google.android.gms.internal.maps.zzv
+com.google.android.gms.internal.maps.zzw
+com.google.android.gms.internal.maps.zzx
+com.google.android.gms.internal.maps.zzy:
     public final boolean zzD()
     public final boolean zzE()
     public final boolean zzG()
@@ -9684,36 +9744,8 @@ com.google.android.gms.internal.maps.zzv:
     public final java.lang.String zzk()
     public final java.lang.String zzl()
     public final void zzx(com.google.android.gms.dynamic.IObjectWrapper)
-com.google.android.gms.internal.maps.zzx:
-    public abstract boolean zzD()
-    public abstract boolean zzE()
-    public abstract boolean zzG()
-    public abstract float zzd()
-    public abstract float zze()
-    public abstract float zzf()
-    public abstract com.google.android.gms.dynamic.IObjectWrapper zzh()
-    public abstract java.lang.String zzk()
-    public abstract java.lang.String zzl()
-    public abstract void zzx(com.google.android.gms.dynamic.IObjectWrapper)
-com.google.android.gms.internal.maps.zzy:
-    public final boolean zzC()
-    public final boolean zzD()
-    public final boolean zzE()
-    public final float zzd()
-    public final float zze()
-    public final int zzf()
-    public final int zzg()
-    public final int zzh()
-    public final com.google.android.gms.dynamic.IObjectWrapper zzj()
-    public final java.util.List zzl()
-    public final java.util.List zzm()
-    public final java.util.List zzn()
-    public final void zzv(int)
-    public final void zzw(java.util.List)
-    public final void zzy(com.google.android.gms.dynamic.IObjectWrapper)
 com.google.android.gms.internal.tasks.zza:
     public void <init>()
-com.google.android.gms.location.ActivityRecognition$zza
 com.google.android.gms.location.ActivityRecognition
 com.google.android.gms.location.ActivityRecognitionApi
 com.google.android.gms.location.ActivityRecognitionClient
@@ -9724,6 +9756,8 @@ com.google.android.gms.location.ActivityTransition
 com.google.android.gms.location.ActivityTransitionEvent
 com.google.android.gms.location.ActivityTransitionRequest
 com.google.android.gms.location.ActivityTransitionResult
+com.google.android.gms.location.CurrentLocationRequest$Builder
+com.google.android.gms.location.CurrentLocationRequest
 com.google.android.gms.location.DetectedActivity
 com.google.android.gms.location.FusedLocationProviderApi:
     public static final java.lang.String KEY_LOCATION_CHANGED
@@ -9743,12 +9777,18 @@ com.google.android.gms.location.FusedLocationProviderApi:
 com.google.android.gms.location.FusedLocationProviderClient:
     public static final java.lang.String KEY_VERTICAL_ACCURACY
     public com.google.android.gms.tasks.Task flushLocations()
+    public com.google.android.gms.tasks.Task getCurrentLocation(int,com.google.android.gms.tasks.CancellationToken)
+    public com.google.android.gms.tasks.Task getCurrentLocation(com.google.android.gms.location.CurrentLocationRequest,com.google.android.gms.tasks.CancellationToken)
+    public com.google.android.gms.tasks.Task getLastLocation(com.google.android.gms.location.LastLocationRequest)
     public com.google.android.gms.tasks.Task getLocationAvailability()
     public com.google.android.gms.tasks.Task removeLocationUpdates(android.app.PendingIntent)
     public com.google.android.gms.tasks.Task requestLocationUpdates(com.google.android.gms.location.LocationRequest,android.app.PendingIntent)
+    public com.google.android.gms.tasks.Task requestLocationUpdates(com.google.android.gms.location.LocationRequest,java.util.concurrent.Executor,com.google.android.gms.location.LocationCallback)
     public com.google.android.gms.tasks.Task setMockLocation(android.location.Location)
     public com.google.android.gms.tasks.Task setMockMode(boolean)
 com.google.android.gms.location.Geofence$Builder
+com.google.android.gms.location.Geofence$GeofenceTransition
+com.google.android.gms.location.Geofence$TransitionTypes
 com.google.android.gms.location.Geofence
 com.google.android.gms.location.GeofenceStatusCodes
 com.google.android.gms.location.GeofencingApi:
@@ -9759,7 +9799,15 @@ com.google.android.gms.location.GeofencingApi:
 com.google.android.gms.location.GeofencingClient
 com.google.android.gms.location.GeofencingEvent
 com.google.android.gms.location.GeofencingRequest$Builder
+com.google.android.gms.location.GeofencingRequest$InitialTrigger
 com.google.android.gms.location.GeofencingRequest
+com.google.android.gms.location.Granularity
+com.google.android.gms.location.LastLocationRequest$Builder:
+    public void <init>(com.google.android.gms.location.LastLocationRequest)
+    public com.google.android.gms.location.LastLocationRequest$Builder setGranularity(int)
+    public com.google.android.gms.location.LastLocationRequest$Builder setMaxUpdateAgeMillis(long)
+com.google.android.gms.location.LastLocationRequest:
+    public final boolean zza()
 com.google.android.gms.location.LocationAvailability:
     public static com.google.android.gms.location.LocationAvailability extractLocationAvailability(android.content.Intent)
     public static boolean hasLocationAvailability(android.content.Intent)
@@ -9768,17 +9816,19 @@ com.google.android.gms.location.LocationRequest:
     public static final int PRIORITY_HIGH_ACCURACY
     public static final int PRIORITY_LOW_POWER
     public static final int PRIORITY_NO_POWER
-    public final long getExpirationTime()
-    public final long getFastestInterval()
-    public final long getInterval()
-    public final int getNumUpdates()
-    public final int getPriority()
-    public final float getSmallestDisplacement()
-    public final boolean isFastestIntervalExplicitlySet()
-    public final com.google.android.gms.location.LocationRequest setExpirationDuration(long)
-    public final com.google.android.gms.location.LocationRequest setExpirationTime(long)
-    public final com.google.android.gms.location.LocationRequest setMaxWaitTime(long)
-    public final com.google.android.gms.location.LocationRequest setNumUpdates(int)
+    public long getExpirationTime()
+    public long getFastestInterval()
+    public long getInterval()
+    public int getNumUpdates()
+    public int getPriority()
+    public float getSmallestDisplacement()
+    public boolean isFastestIntervalExplicitlySet()
+    public boolean isWaitForAccurateLocation()
+    public com.google.android.gms.location.LocationRequest setExpirationDuration(long)
+    public com.google.android.gms.location.LocationRequest setExpirationTime(long)
+    public com.google.android.gms.location.LocationRequest setMaxWaitTime(long)
+    public com.google.android.gms.location.LocationRequest setNumUpdates(int)
+    public com.google.android.gms.location.LocationRequest setWaitForAccurateLocation(boolean)
 com.google.android.gms.location.LocationResult:
     public static com.google.android.gms.location.LocationResult create(java.util.List)
     public static com.google.android.gms.location.LocationResult extractResult(android.content.Intent)
@@ -9787,40 +9837,85 @@ com.google.android.gms.location.LocationServices:
     private void <init>()
     public static com.google.android.gms.location.GeofencingClient getGeofencingClient(android.app.Activity)
     public static com.google.android.gms.location.GeofencingClient getGeofencingClient(android.content.Context)
-    public static com.google.android.gms.internal.location.zzaz zza(com.google.android.gms.common.api.GoogleApiClient)
+    public static com.google.android.gms.internal.location.zzbe zza(com.google.android.gms.common.api.GoogleApiClient)
 com.google.android.gms.location.LocationSettingsRequest$Builder:
-    public final com.google.android.gms.location.LocationSettingsRequest$Builder addAllLocationRequests(java.util.Collection)
-    public final com.google.android.gms.location.LocationSettingsRequest$Builder setAlwaysShow(boolean)
-    public final com.google.android.gms.location.LocationSettingsRequest$Builder setNeedBle(boolean)
+    public com.google.android.gms.location.LocationSettingsRequest$Builder addAllLocationRequests(java.util.Collection)
+    public com.google.android.gms.location.LocationSettingsRequest$Builder setAlwaysShow(boolean)
+    public com.google.android.gms.location.LocationSettingsRequest$Builder setNeedBle(boolean)
 com.google.android.gms.location.LocationSettingsStates:
     public static com.google.android.gms.location.LocationSettingsStates fromIntent(android.content.Intent)
-    public final boolean isLocationPresent()
-    public final boolean isLocationUsable()
+    public boolean isLocationPresent()
+    public boolean isLocationUsable()
 com.google.android.gms.location.LocationSettingsStatusCodes
 com.google.android.gms.location.LocationStatusCodes
+com.google.android.gms.location.Priority
 com.google.android.gms.location.R
-com.google.android.gms.location.places.PlaceReport
-com.google.android.gms.location.places.zza
+com.google.android.gms.location.SettingsApi:
+    public abstract com.google.android.gms.common.api.PendingResult checkLocationSettings(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.location.LocationSettingsRequest)
+com.google.android.gms.location.SleepClassifyEvent
+com.google.android.gms.location.SleepSegmentEvent
+com.google.android.gms.location.SleepSegmentRequest
 com.google.android.gms.location.zza
+com.google.android.gms.location.zzaa
+com.google.android.gms.location.zzab
+com.google.android.gms.location.zzac
+com.google.android.gms.location.zzad
+com.google.android.gms.location.zzae
+com.google.android.gms.location.zzag
+com.google.android.gms.location.zzah
 com.google.android.gms.location.zzal
 com.google.android.gms.location.zzam
+com.google.android.gms.location.zzao
+com.google.android.gms.location.zzap
+com.google.android.gms.location.zzas
+com.google.android.gms.location.zzav:
+    public void zzc()
+com.google.android.gms.location.zzax
+com.google.android.gms.location.zzay
+com.google.android.gms.location.zzaz
 com.google.android.gms.location.zzb
+com.google.android.gms.location.zzba
+com.google.android.gms.location.zzbb
+com.google.android.gms.location.zzbc:
+    public static int zza(int)
+com.google.android.gms.location.zzbg:
+    public final void zzd(com.google.android.gms.location.LocationAvailability)
+    public final void zze(com.google.android.gms.location.LocationResult)
+com.google.android.gms.location.zzbj:
+    public final void zzd(android.location.Location)
+com.google.android.gms.location.zzbk:
+    public void <init>()
+com.google.android.gms.location.zzbr
+com.google.android.gms.location.zzbx
+com.google.android.gms.location.zzby
 com.google.android.gms.location.zzc
+com.google.android.gms.location.zzca:
+    public final void setFailedResult(com.google.android.gms.common.api.Status)
+com.google.android.gms.location.zzcb
+com.google.android.gms.location.zzcc
+com.google.android.gms.location.zzcd
+com.google.android.gms.location.zzce
+com.google.android.gms.location.zzcf
 com.google.android.gms.location.zzd
 com.google.android.gms.location.zze
 com.google.android.gms.location.zzf
 com.google.android.gms.location.zzg
 com.google.android.gms.location.zzh
 com.google.android.gms.location.zzi
+com.google.android.gms.location.zzj
+com.google.android.gms.location.zzk
+com.google.android.gms.location.zzl
 com.google.android.gms.location.zzm
+com.google.android.gms.location.zzn
+com.google.android.gms.location.zzo
+com.google.android.gms.location.zzp
 com.google.android.gms.location.zzq
-com.google.android.gms.location.zzw:
-    public final void onLocationAvailability(com.google.android.gms.location.LocationAvailability)
-    public final void onLocationResult(com.google.android.gms.location.LocationResult)
-com.google.android.gms.location.zzy:
-    public void <init>()
-com.google.android.gms.location.zzz:
-    public final void onLocationChanged(android.location.Location)
+com.google.android.gms.location.zzr
+com.google.android.gms.location.zzs
+com.google.android.gms.location.zzt
+com.google.android.gms.location.zzu
+com.google.android.gms.location.zzv
+com.google.android.gms.location.zzz
 com.google.android.gms.maps.CameraUpdateFactory:
     private void <init>()
     public static com.google.android.gms.maps.CameraUpdate newLatLngBounds(com.google.android.gms.maps.model.LatLngBounds,int,int,int)
@@ -9890,7 +9985,6 @@ com.google.android.gms.maps.GoogleMapOptions:
     public com.google.android.gms.maps.GoogleMapOptions zOrderOnTop(boolean)
     public static com.google.android.gms.maps.model.CameraPosition zza(android.content.Context,android.util.AttributeSet)
     public static com.google.android.gms.maps.model.LatLngBounds zzb(android.content.Context,android.util.AttributeSet)
-    private static int zzc(android.content.Context,java.lang.String)
 com.google.android.gms.maps.LocationSource$OnLocationChangedListener
 com.google.android.gms.maps.LocationSource
 com.google.android.gms.maps.MapFragment
@@ -9927,11 +10021,13 @@ com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate:
     public abstract com.google.android.gms.dynamic.IObjectWrapper newLatLngBoundsWithSize(com.google.android.gms.maps.model.LatLngBounds,int,int,int)
 com.google.android.gms.maps.internal.IGoogleMapDelegate:
     public abstract com.google.android.gms.internal.maps.zzo addGroundOverlay(com.google.android.gms.maps.model.GroundOverlayOptions)
+    public abstract void addOnMapCapabilitiesChangedListener(com.google.android.gms.maps.internal.zzak)
     public abstract void animateCameraWithCallback(com.google.android.gms.dynamic.IObjectWrapper,com.google.android.gms.maps.internal.zzd)
     public abstract void animateCameraWithDurationAndCallback(com.google.android.gms.dynamic.IObjectWrapper,int,com.google.android.gms.maps.internal.zzd)
     public abstract void clear()
     public abstract com.google.android.gms.internal.maps.zzr getFocusedBuilding()
-    public abstract void getMapAsync(com.google.android.gms.maps.internal.zzar)
+    public abstract void getMapAsync(com.google.android.gms.maps.internal.zzas)
+    public abstract com.google.android.gms.internal.maps.zzx getMapCapabilities()
     public abstract int getMapType()
     public abstract android.location.Location getMyLocation()
     public abstract boolean isIndoorEnabled()
@@ -9946,6 +10042,7 @@ com.google.android.gms.maps.internal.IGoogleMapDelegate:
     public abstract void onSaveInstanceState(android.os.Bundle)
     public abstract void onStart()
     public abstract void onStop()
+    public abstract void removeOnMapCapabilitiesChangedListener(com.google.android.gms.maps.internal.zzak)
     public abstract void setContentDescription(java.lang.String)
     public abstract void setInfoWindowAdapter(com.google.android.gms.maps.internal.zzi)
     public abstract void setLocationSource(com.google.android.gms.maps.internal.ILocationSourceDelegate)
@@ -9955,12 +10052,12 @@ com.google.android.gms.maps.internal.IGoogleMapDelegate:
     public abstract void setOnIndoorStateChangeListener(com.google.android.gms.maps.internal.zzab)
     public abstract void setOnInfoWindowCloseListener(com.google.android.gms.maps.internal.zzaf)
     public abstract void setOnInfoWindowLongClickListener(com.google.android.gms.maps.internal.zzah)
-    public abstract void setOnMyLocationButtonClickListener(com.google.android.gms.maps.internal.zzax)
-    public abstract void setOnMyLocationChangeListener(com.google.android.gms.maps.internal.zzaz)
-    public abstract void setOnMyLocationClickListener(com.google.android.gms.maps.internal.zzbb)
-    public abstract void setOnPoiClickListener(com.google.android.gms.maps.internal.zzbd)
+    public abstract void setOnMyLocationButtonClickListener(com.google.android.gms.maps.internal.zzay)
+    public abstract void setOnMyLocationChangeListener(com.google.android.gms.maps.internal.zzba)
+    public abstract void setOnMyLocationClickListener(com.google.android.gms.maps.internal.zzbc)
+    public abstract void setOnPoiClickListener(com.google.android.gms.maps.internal.zzbe)
     public abstract void setWatermarkEnabled(boolean)
-    public abstract void snapshotForTest(com.google.android.gms.maps.internal.zzbu)
+    public abstract void snapshotForTest(com.google.android.gms.maps.internal.zzbv)
     public abstract void stopAnimation()
     public abstract boolean useViewLifecycleWhenInFragment()
 com.google.android.gms.maps.internal.ILocationSourceDelegate
@@ -9990,7 +10087,7 @@ com.google.android.gms.maps.internal.zzag
 com.google.android.gms.maps.internal.zzah
 com.google.android.gms.maps.internal.zzai
 com.google.android.gms.maps.internal.zzaj
-com.google.android.gms.maps.internal.zzaw
+com.google.android.gms.maps.internal.zzak
 com.google.android.gms.maps.internal.zzax
 com.google.android.gms.maps.internal.zzay
 com.google.android.gms.maps.internal.zzaz
@@ -10000,7 +10097,7 @@ com.google.android.gms.maps.internal.zzba
 com.google.android.gms.maps.internal.zzbb
 com.google.android.gms.maps.internal.zzbc
 com.google.android.gms.maps.internal.zzbd
-com.google.android.gms.maps.internal.zzbi
+com.google.android.gms.maps.internal.zzbe
 com.google.android.gms.maps.internal.zzbj
 com.google.android.gms.maps.internal.zzbk
 com.google.android.gms.maps.internal.zzbl
@@ -10010,10 +10107,11 @@ com.google.android.gms.maps.internal.zzbo
 com.google.android.gms.maps.internal.zzbp
 com.google.android.gms.maps.internal.zzbq
 com.google.android.gms.maps.internal.zzbr
-com.google.android.gms.maps.internal.zzbv
+com.google.android.gms.maps.internal.zzbs
 com.google.android.gms.maps.internal.zzbw
 com.google.android.gms.maps.internal.zzbx
-com.google.android.gms.maps.internal.zzby:
+com.google.android.gms.maps.internal.zzby
+com.google.android.gms.maps.internal.zzbz:
     public final boolean isIndoorLevelPickerEnabled()
     public final boolean isScrollGesturesEnabledDuringRotateOrZoom()
     public final void setAllGesturesEnabled(boolean)
@@ -10031,11 +10129,13 @@ com.google.android.gms.maps.internal.zzf:
     public abstract com.google.android.gms.maps.internal.IStreetViewPanoramaViewDelegate zzi(com.google.android.gms.dynamic.IObjectWrapper,com.google.android.gms.maps.StreetViewPanoramaOptions)
 com.google.android.gms.maps.internal.zzg:
     public final com.google.android.gms.internal.maps.zzo addGroundOverlay(com.google.android.gms.maps.model.GroundOverlayOptions)
+    public final void addOnMapCapabilitiesChangedListener(com.google.android.gms.maps.internal.zzak)
     public final void animateCameraWithCallback(com.google.android.gms.dynamic.IObjectWrapper,com.google.android.gms.maps.internal.zzd)
     public final void animateCameraWithDurationAndCallback(com.google.android.gms.dynamic.IObjectWrapper,int,com.google.android.gms.maps.internal.zzd)
     public final void clear()
     public final com.google.android.gms.internal.maps.zzr getFocusedBuilding()
-    public final void getMapAsync(com.google.android.gms.maps.internal.zzar)
+    public final void getMapAsync(com.google.android.gms.maps.internal.zzas)
+    public final com.google.android.gms.internal.maps.zzx getMapCapabilities()
     public final int getMapType()
     public final android.location.Location getMyLocation()
     public final boolean isIndoorEnabled()
@@ -10050,6 +10150,7 @@ com.google.android.gms.maps.internal.zzg:
     public final void onSaveInstanceState(android.os.Bundle)
     public final void onStart()
     public final void onStop()
+    public final void removeOnMapCapabilitiesChangedListener(com.google.android.gms.maps.internal.zzak)
     public final void setContentDescription(java.lang.String)
     public final void setInfoWindowAdapter(com.google.android.gms.maps.internal.zzi)
     public final void setLocationSource(com.google.android.gms.maps.internal.ILocationSourceDelegate)
@@ -10059,12 +10160,12 @@ com.google.android.gms.maps.internal.zzg:
     public final void setOnIndoorStateChangeListener(com.google.android.gms.maps.internal.zzab)
     public final void setOnInfoWindowCloseListener(com.google.android.gms.maps.internal.zzaf)
     public final void setOnInfoWindowLongClickListener(com.google.android.gms.maps.internal.zzah)
-    public final void setOnMyLocationButtonClickListener(com.google.android.gms.maps.internal.zzax)
-    public final void setOnMyLocationChangeListener(com.google.android.gms.maps.internal.zzaz)
-    public final void setOnMyLocationClickListener(com.google.android.gms.maps.internal.zzbb)
-    public final void setOnPoiClickListener(com.google.android.gms.maps.internal.zzbd)
+    public final void setOnMyLocationButtonClickListener(com.google.android.gms.maps.internal.zzay)
+    public final void setOnMyLocationChangeListener(com.google.android.gms.maps.internal.zzba)
+    public final void setOnMyLocationClickListener(com.google.android.gms.maps.internal.zzbc)
+    public final void setOnPoiClickListener(com.google.android.gms.maps.internal.zzbe)
     public final void setWatermarkEnabled(boolean)
-    public final void snapshotForTest(com.google.android.gms.maps.internal.zzbu)
+    public final void snapshotForTest(com.google.android.gms.maps.internal.zzbv)
     public final void stopAnimation()
     public final boolean useViewLifecycleWhenInFragment()
 com.google.android.gms.maps.internal.zzh
@@ -10104,8 +10205,6 @@ com.google.android.gms.maps.model.CameraPosition:
     public static com.google.android.gms.maps.model.CameraPosition$Builder builder(com.google.android.gms.maps.model.CameraPosition)
     public static com.google.android.gms.maps.model.CameraPosition createFromAttributes(android.content.Context,android.util.AttributeSet)
     public static final com.google.android.gms.maps.model.CameraPosition fromLatLngZoom(com.google.android.gms.maps.model.LatLng,float)
-com.google.android.gms.maps.model.Cap:
-    final com.google.android.gms.maps.model.Cap zza()
 com.google.android.gms.maps.model.Circle:
     public com.google.android.gms.maps.model.LatLng getCenter()
     public int getFillColor()
@@ -10180,6 +10279,7 @@ com.google.android.gms.maps.model.Polyline:
     public int getJointType()
     public java.util.List getPattern()
     public java.util.List getPoints()
+    public java.util.List getSpans()
     public com.google.android.gms.maps.model.Cap getStartCap()
     public java.lang.Object getTag()
     public float getWidth()
@@ -10187,10 +10287,20 @@ com.google.android.gms.maps.model.Polyline:
     public boolean isClickable()
     public boolean isGeodesic()
     public boolean isVisible()
+    public void setSpans(java.util.List)
     public void setTag(java.lang.Object)
 com.google.android.gms.maps.model.PolylineOptions:
     public com.google.android.gms.maps.model.PolylineOptions add(com.google.android.gms.maps.model.LatLng)
     public varargs com.google.android.gms.maps.model.PolylineOptions add(com.google.android.gms.maps.model.LatLng[])
+    public com.google.android.gms.maps.model.PolylineOptions addAllSpans(java.lang.Iterable)
+    public com.google.android.gms.maps.model.PolylineOptions addSpan(com.google.android.gms.maps.model.StyleSpan)
+    public varargs com.google.android.gms.maps.model.PolylineOptions addSpan(com.google.android.gms.maps.model.StyleSpan[])
+com.google.android.gms.maps.model.SpriteStyle$Builder
+com.google.android.gms.maps.model.SpriteStyle
+com.google.android.gms.maps.model.StampStyle$Builder
+com.google.android.gms.maps.model.StampStyle:
+    protected void <init>(com.google.android.gms.maps.model.BitmapDescriptor)
+    public com.google.android.gms.maps.model.BitmapDescriptor getStamp()
 com.google.android.gms.maps.model.StreetViewPanoramaCamera$Builder
 com.google.android.gms.maps.model.StreetViewPanoramaCamera
 com.google.android.gms.maps.model.StreetViewPanoramaLink
@@ -10198,6 +10308,22 @@ com.google.android.gms.maps.model.StreetViewPanoramaLocation
 com.google.android.gms.maps.model.StreetViewPanoramaOrientation$Builder
 com.google.android.gms.maps.model.StreetViewPanoramaOrientation
 com.google.android.gms.maps.model.StreetViewSource
+com.google.android.gms.maps.model.StrokeStyle$Builder:
+    private void <init>()
+    synthetic void <init>(com.google.android.gms.maps.model.zzu)
+    public com.google.android.gms.maps.model.StrokeStyle$Builder stamp(com.google.android.gms.maps.model.StampStyle)
+    public final com.google.android.gms.maps.model.StrokeStyle$Builder zza(int)
+    public final com.google.android.gms.maps.model.StrokeStyle$Builder zzb(int,int)
+com.google.android.gms.maps.model.StrokeStyle:
+    public static com.google.android.gms.maps.model.StrokeStyle$Builder colorBuilder(int)
+    public static com.google.android.gms.maps.model.StrokeStyle$Builder gradientBuilder(int,int)
+    public static com.google.android.gms.maps.model.StrokeStyle$Builder transparentColorBuilder()
+com.google.android.gms.maps.model.StyleSpan:
+    public void <init>(int)
+    public void <init>(int,double)
+    public void <init>(com.google.android.gms.maps.model.StrokeStyle)
+com.google.android.gms.maps.model.TextureStyle$Builder
+com.google.android.gms.maps.model.TextureStyle
 com.google.android.gms.maps.model.TileOverlayOptions:
     public com.google.android.gms.maps.model.TileProvider getTileProvider()
 com.google.android.gms.maps.model.UrlTileProvider
@@ -10205,10 +10331,14 @@ com.google.android.gms.maps.model.zzd
 com.google.android.gms.maps.model.zze
 com.google.android.gms.maps.model.zzk
 com.google.android.gms.maps.model.zzn
-com.google.android.gms.maps.model.zzo
 com.google.android.gms.maps.model.zzp
 com.google.android.gms.maps.model.zzq
 com.google.android.gms.maps.model.zzr
+com.google.android.gms.maps.model.zzs
+com.google.android.gms.maps.model.zzt
+com.google.android.gms.maps.model.zzu
+com.google.android.gms.maps.model.zzx
+com.google.android.gms.maps.model.zzy
 com.google.android.gms.maps.zzaa
 com.google.android.gms.maps.zzac
 com.google.android.gms.maps.zzad
@@ -10251,7 +10381,6 @@ com.google.android.gms.maps.zzr
 com.google.android.gms.maps.zzs
 com.google.android.gms.maps.zzt
 com.google.android.gms.maps.zzw
-com.google.android.gms.places_placereport.R
 com.google.android.gms.security.ProviderInstaller$ProviderInstallListener
 com.google.android.gms.security.ProviderInstaller
 com.google.android.gms.security.zza
@@ -10280,6 +10409,7 @@ com.google.android.gms.tasks.Task:
     public com.google.android.gms.tasks.Task addOnCompleteListener(android.app.Activity,com.google.android.gms.tasks.OnCompleteListener)
     public abstract com.google.android.gms.tasks.Task addOnFailureListener(java.util.concurrent.Executor,com.google.android.gms.tasks.OnFailureListener)
     public abstract com.google.android.gms.tasks.Task addOnSuccessListener(java.util.concurrent.Executor,com.google.android.gms.tasks.OnSuccessListener)
+    public com.google.android.gms.tasks.Task continueWith(com.google.android.gms.tasks.Continuation)
     public com.google.android.gms.tasks.Task continueWithTask(com.google.android.gms.tasks.Continuation)
     public com.google.android.gms.tasks.Task continueWithTask(java.util.concurrent.Executor,com.google.android.gms.tasks.Continuation)
     public abstract java.lang.Object getResult(java.lang.Class)
@@ -10311,6 +10441,7 @@ com.google.android.gms.tasks.zzw:
     public final com.google.android.gms.tasks.Task addOnCanceledListener(com.google.android.gms.tasks.OnCanceledListener)
     public final com.google.android.gms.tasks.Task addOnCanceledListener(java.util.concurrent.Executor,com.google.android.gms.tasks.OnCanceledListener)
     public final com.google.android.gms.tasks.Task addOnCompleteListener(android.app.Activity,com.google.android.gms.tasks.OnCompleteListener)
+    public final com.google.android.gms.tasks.Task continueWith(com.google.android.gms.tasks.Continuation)
     public final com.google.android.gms.tasks.Task continueWithTask(com.google.android.gms.tasks.Continuation)
     public final com.google.android.gms.tasks.Task continueWithTask(java.util.concurrent.Executor,com.google.android.gms.tasks.Continuation)
     public final java.lang.Object getResult(java.lang.Class)
@@ -13444,10 +13575,9 @@ io.flutter.embedding.android.AndroidTouchProcessor$PointerChange
 io.flutter.embedding.android.AndroidTouchProcessor$PointerDeviceKind
 io.flutter.embedding.android.AndroidTouchProcessor$PointerSignalKind
 io.flutter.embedding.android.AndroidTouchProcessor:
-    private static final int BYTES_PER_FIELD
+    static final int BYTES_PER_FIELD
     private static final int POINTER_DATA_FIELD_COUNT
     private static final int POINTER_DATA_FLAG_BATCHED
-    private static final int _POINTER_BUTTON_PRIMARY
 io.flutter.embedding.android.DrawableSplashScreen$DrawableSplashScreenView:
     public void <init>(android.content.Context,android.util.AttributeSet)
 io.flutter.embedding.android.FlutterActivity$CachedEngineIntentBuilder
@@ -13460,6 +13590,7 @@ io.flutter.embedding.android.FlutterActivity:
     public void updateSystemUiOverlays()
     public static io.flutter.embedding.android.FlutterActivity$CachedEngineIntentBuilder withCachedEngine(java.lang.String)
     public static io.flutter.embedding.android.FlutterActivity$NewEngineIntentBuilder withNewEngine()
+io.flutter.embedding.android.FlutterActivityAndFragmentDelegate$DelegateFactory
 io.flutter.embedding.android.FlutterActivityAndFragmentDelegate$Host:
     public abstract io.flutter.embedding.android.ExclusiveAppComponent getExclusiveAppComponent()
     public abstract void updateSystemUiOverlays()
@@ -13505,8 +13636,27 @@ io.flutter.embedding.android.FlutterView:
     public android.view.View findViewByAccessibilityIdTraversal(int)
 io.flutter.embedding.android.KeyChannelResponder:
     private static final java.lang.String TAG
+io.flutter.embedding.android.KeyData$Type:
+    static io.flutter.embedding.android.KeyData$Type fromLong(long)
+io.flutter.embedding.android.KeyData:
+    private static final int BYTES_PER_FIELD
+    public static final java.lang.String CHANNEL
+    private static final int FIELD_COUNT
+    private static final java.lang.String TAG
+    public void <init>(java.nio.ByteBuffer)
+io.flutter.embedding.android.KeyEmbedderResponder:
+    private static final java.lang.String TAG
 io.flutter.embedding.android.KeyboardManager:
     private static final java.lang.String TAG
+io.flutter.embedding.android.KeyboardMap$1:
+    private static final long serialVersionUID
+io.flutter.embedding.android.KeyboardMap$2:
+    private static final long serialVersionUID
+io.flutter.embedding.android.KeyboardMap:
+    public static final long kAndroidPlane
+    public static final long kUnicodePlane
+    public static final long kValueMask
+    public void <init>()
 io.flutter.embedding.android.SplashScreenProvider
 io.flutter.embedding.engine.FlutterEngine:
     private static final java.lang.String TAG
@@ -13577,6 +13727,7 @@ io.flutter.embedding.engine.FlutterShellArgs:
     public static final java.lang.String ARG_DISABLE_SERVICE_AUTH_CODES
     public static final java.lang.String ARG_DUMP_SHADER_SKP_ON_SHADER_COMPILATION
     public static final java.lang.String ARG_ENABLE_DART_PROFILING
+    public static final java.lang.String ARG_ENABLE_IMPELLER
     public static final java.lang.String ARG_ENABLE_SOFTWARE_RENDERING
     public static final java.lang.String ARG_ENDLESS_TRACE_BUFFER
     public static final java.lang.String ARG_KEY_CACHE_SKSL
@@ -13584,6 +13735,7 @@ io.flutter.embedding.engine.FlutterShellArgs:
     public static final java.lang.String ARG_KEY_DISABLE_SERVICE_AUTH_CODES
     public static final java.lang.String ARG_KEY_DUMP_SHADER_SKP_ON_SHADER_COMPILATION
     public static final java.lang.String ARG_KEY_ENABLE_DART_PROFILING
+    public static final java.lang.String ARG_KEY_ENABLE_IMPELLER
     public static final java.lang.String ARG_KEY_ENABLE_SOFTWARE_RENDERING
     public static final java.lang.String ARG_KEY_ENDLESS_TRACE_BUFFER
     public static final java.lang.String ARG_KEY_MSAA_SAMPLES
@@ -13655,6 +13807,7 @@ io.flutter.embedding.engine.loader.FlutterLoader:
     static final java.lang.String AUTOMATICALLY_REGISTER_PLUGINS_KEY
     private static final java.lang.String DEFAULT_KERNEL_BLOB
     private static final java.lang.String DEFAULT_LIBRARY
+    private static final java.lang.String ENABLE_IMPELLER_META_DATA_KEY
     private static final java.lang.String ENABLE_SKPARAGRAPH_META_DATA_KEY
     static final java.lang.String FLUTTER_ASSETS_DIR_KEY
     static final java.lang.String ISOLATE_SNAPSHOT_DATA_KEY
@@ -13785,9 +13938,12 @@ io.flutter.embedding.engine.systemchannels.SettingsChannel:
     private static final java.lang.String ALWAYS_USE_24_HOUR_FORMAT
     private static final java.lang.String BRIEFLY_SHOW_PASSWORD
     public static final java.lang.String CHANNEL_NAME
+    private static final java.lang.String NATIVE_SPELL_CHECK_SERVICE_DEFINED
     private static final java.lang.String PLATFORM_BRIGHTNESS
     private static final java.lang.String TAG
     private static final java.lang.String TEXT_SCALE_FACTOR
+io.flutter.embedding.engine.systemchannels.SpellCheckChannel:
+    private static final java.lang.String TAG
 io.flutter.embedding.engine.systemchannels.SystemChannel:
     private static final java.lang.String TAG
 io.flutter.embedding.engine.systemchannels.TextInputChannel:
@@ -13865,6 +14021,8 @@ io.flutter.plugin.editing.InputConnectionAdaptor:
     private static int clampIndexToEditable(int,android.text.Editable)
 io.flutter.plugin.editing.ListenableEditingState:
     private static final java.lang.String TAG
+io.flutter.plugin.editing.SpellCheckPlugin:
+    private static final int MAX_SPELL_CHECK_SUGGESTIONS
 io.flutter.plugin.editing.TextEditingDelta:
     private static final java.lang.String TAG
     public int getDeltaEnd()
@@ -13882,23 +14040,20 @@ io.flutter.plugin.editing.TextInputPlugin:
     public android.view.inputmethod.InputConnection getLastInputConnection()
 io.flutter.plugin.mouse.MouseCursorPlugin$2:
     private static final long serialVersionUID
-io.flutter.plugin.platform.AccessibilityEventsDelegate:
-    public boolean requestSendAccessibilityEvent(android.view.View,android.view.View,android.view.accessibility.AccessibilityEvent)
 io.flutter.plugin.platform.PlatformPlugin:
     public static final int DEFAULT_SYSTEM_UI
     private static final java.lang.String TAG
     public void <init>(android.app.Activity,io.flutter.embedding.engine.systemchannels.PlatformChannel)
-io.flutter.plugin.platform.PlatformView$-CC:
-    public static void $default$onInputConnectionLocked(io.flutter.plugin.platform.PlatformView)
-    public static void $default$onInputConnectionUnlocked(io.flutter.plugin.platform.PlatformView)
-io.flutter.plugin.platform.PlatformView:
-    public void onInputConnectionLocked()
-    public void onInputConnectionUnlocked()
 io.flutter.plugin.platform.PlatformViewWrapper:
     private static final java.lang.String TAG
     public android.graphics.SurfaceTexture getTexture()
 io.flutter.plugin.platform.PlatformViewsController:
     private static final java.lang.String TAG
+io.flutter.plugin.platform.SingleViewPresentation$WindowManagerHandler:
+    private static final java.lang.String TAG
+io.flutter.plugin.platform.VirtualDisplayController:
+    public void dispose()
+    void onFlutterViewDetached()
 io.flutter.plugins.flutter_plugin_android_lifecycle.BuildConfig
 io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin:
     public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
@@ -13918,8 +14073,6 @@ io.flutter.plugins.googlemaps.Convert:
     void <init>()
 io.flutter.plugins.googlemaps.GoogleMapController:
     private static final java.lang.String TAG
-    public void onInputConnectionLocked()
-    public void onInputConnectionUnlocked()
     void setView(com.google.android.gms.maps.MapView)
 io.flutter.plugins.googlemaps.GoogleMapOptionsSink:
     public abstract void setInitialCircles(java.lang.Object)
@@ -14104,6 +14257,8 @@ io.flutter.plugins.videoplayer.VideoPlayerPlugin:
     private static synthetic boolean lambda$registerWith$0(io.flutter.plugins.videoplayer.VideoPlayerPlugin,io.flutter.view.FlutterNativeView)
     private void onDestroy()
     public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+io.flutter.util.HandlerCompat:
+    public void <init>()
 io.flutter.util.PathUtils:
     public void <init>()
 io.flutter.util.Preconditions:
@@ -14123,7 +14278,6 @@ io.flutter.view.AccessibilityBridge:
     private static final float SCROLL_EXTENT_FOR_INFINITY
     private static final float SCROLL_POSITION_CAP_FOR_INFINITY
     private static final java.lang.String TAG
-    public boolean externalViewRequestSendAccessibilityEvent(android.view.View,android.view.View,android.view.accessibility.AccessibilityEvent)
     public int getHoveredObjectId()
     public void reset()
 io.flutter.view.FlutterMain$Settings
@@ -14207,6 +14361,7 @@ kotlin.BuilderInference
 kotlin.CharCodeJVMKt
 kotlin.CharCodeKt
 kotlin.CompareToKt
+kotlin.ContextFunctionTypeParams
 kotlin.DeepRecursiveFunction
 kotlin.DeepRecursiveKt
 kotlin.DeepRecursiveScope
@@ -14593,6 +14748,62 @@ kotlin.collections.ArraysKt___ArraysJvmKt:
     public static synthetic void fill$default(boolean[],boolean,int,int,int,java.lang.Object)
     public static final java.util.List filterIsInstance(java.lang.Object[],java.lang.Class)
     public static final java.util.Collection filterIsInstanceTo(java.lang.Object[],java.util.Collection,java.lang.Class)
+    public static final synthetic java.lang.Byte max(byte[])
+    public static final synthetic java.lang.Character max(char[])
+    public static final synthetic java.lang.Comparable max(java.lang.Comparable[])
+    public static final synthetic java.lang.Double max(double[])
+    public static final synthetic java.lang.Double max(java.lang.Double[])
+    public static final synthetic java.lang.Float max(float[])
+    public static final synthetic java.lang.Float max(java.lang.Float[])
+    public static final synthetic java.lang.Integer max(int[])
+    public static final synthetic java.lang.Long max(long[])
+    public static final synthetic java.lang.Short max(short[])
+    public static final synthetic java.lang.Boolean maxBy(boolean[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Byte maxBy(byte[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character maxBy(char[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Double maxBy(double[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Float maxBy(float[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Integer maxBy(int[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Long maxBy(long[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object maxBy(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Short maxBy(short[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Boolean maxWith(boolean[],java.util.Comparator)
+    public static final synthetic java.lang.Byte maxWith(byte[],java.util.Comparator)
+    public static final synthetic java.lang.Character maxWith(char[],java.util.Comparator)
+    public static final synthetic java.lang.Double maxWith(double[],java.util.Comparator)
+    public static final synthetic java.lang.Float maxWith(float[],java.util.Comparator)
+    public static final synthetic java.lang.Integer maxWith(int[],java.util.Comparator)
+    public static final synthetic java.lang.Long maxWith(long[],java.util.Comparator)
+    public static final synthetic java.lang.Object maxWith(java.lang.Object[],java.util.Comparator)
+    public static final synthetic java.lang.Short maxWith(short[],java.util.Comparator)
+    public static final synthetic java.lang.Byte min(byte[])
+    public static final synthetic java.lang.Character min(char[])
+    public static final synthetic java.lang.Comparable min(java.lang.Comparable[])
+    public static final synthetic java.lang.Double min(double[])
+    public static final synthetic java.lang.Double min(java.lang.Double[])
+    public static final synthetic java.lang.Float min(float[])
+    public static final synthetic java.lang.Float min(java.lang.Float[])
+    public static final synthetic java.lang.Integer min(int[])
+    public static final synthetic java.lang.Long min(long[])
+    public static final synthetic java.lang.Short min(short[])
+    public static final synthetic java.lang.Boolean minBy(boolean[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Byte minBy(byte[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character minBy(char[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Double minBy(double[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Float minBy(float[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Integer minBy(int[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Long minBy(long[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object minBy(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Short minBy(short[],kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Boolean minWith(boolean[],java.util.Comparator)
+    public static final synthetic java.lang.Byte minWith(byte[],java.util.Comparator)
+    public static final synthetic java.lang.Character minWith(char[],java.util.Comparator)
+    public static final synthetic java.lang.Double minWith(double[],java.util.Comparator)
+    public static final synthetic java.lang.Float minWith(float[],java.util.Comparator)
+    public static final synthetic java.lang.Integer minWith(int[],java.util.Comparator)
+    public static final synthetic java.lang.Long minWith(long[],java.util.Comparator)
+    public static final synthetic java.lang.Object minWith(java.lang.Object[],java.util.Comparator)
+    public static final synthetic java.lang.Short minWith(short[],java.util.Comparator)
     public static final byte[] plus(byte[],byte)
     public static final byte[] plus(byte[],java.util.Collection)
     public static final byte[] plus(byte[],byte[])
@@ -14892,8 +15103,8 @@ kotlin.collections.ArraysKt___ArraysKt:
     private static final boolean component5(boolean[])
     public static final boolean contains(byte[],byte)
     public static final boolean contains(char[],char)
-    public static final boolean contains(double[],double)
-    public static final boolean contains(float[],float)
+    public static final synthetic boolean contains(double[],double)
+    public static final synthetic boolean contains(float[],float)
     public static final boolean contains(int[],int)
     public static final boolean contains(long[],long)
     public static final boolean contains(java.lang.Object[],java.lang.Object)
@@ -15271,8 +15482,8 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final kotlin.collections.Grouping groupingBy(java.lang.Object[],kotlin.jvm.functions.Function1)
     public static final int indexOf(byte[],byte)
     public static final int indexOf(char[],char)
-    public static final int indexOf(double[],double)
-    public static final int indexOf(float[],float)
+    public static final synthetic int indexOf(double[],double)
+    public static final synthetic int indexOf(float[],float)
     public static final int indexOf(int[],int)
     public static final int indexOf(long[],long)
     public static final int indexOf(java.lang.Object[],java.lang.Object)
@@ -15379,8 +15590,8 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final boolean last(boolean[],kotlin.jvm.functions.Function1)
     public static final int lastIndexOf(byte[],byte)
     public static final int lastIndexOf(char[],char)
-    public static final int lastIndexOf(double[],double)
-    public static final int lastIndexOf(float[],float)
+    public static final synthetic int lastIndexOf(double[],double)
+    public static final synthetic int lastIndexOf(float[],float)
     public static final int lastIndexOf(int[],int)
     public static final int lastIndexOf(long[],long)
     public static final int lastIndexOf(java.lang.Object[],java.lang.Object)
@@ -15444,25 +15655,6 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.util.Collection mapTo(java.lang.Object[],java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(short[],java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(boolean[],java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Byte max(byte[])
-    public static final synthetic java.lang.Character max(char[])
-    public static final synthetic java.lang.Comparable max(java.lang.Comparable[])
-    public static final synthetic java.lang.Double max(double[])
-    public static final synthetic java.lang.Double max(java.lang.Double[])
-    public static final synthetic java.lang.Float max(float[])
-    public static final synthetic java.lang.Float max(java.lang.Float[])
-    public static final synthetic java.lang.Integer max(int[])
-    public static final synthetic java.lang.Long max(long[])
-    public static final synthetic java.lang.Short max(short[])
-    public static final synthetic java.lang.Boolean maxBy(boolean[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Byte maxBy(byte[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Character maxBy(char[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Double maxBy(double[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Float maxBy(float[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Integer maxBy(int[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Long maxBy(long[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Object maxBy(java.lang.Object[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Short maxBy(short[],kotlin.jvm.functions.Function1)
     public static final java.lang.Boolean maxByOrNull(boolean[],kotlin.jvm.functions.Function1)
     public static final java.lang.Byte maxByOrNull(byte[],kotlin.jvm.functions.Function1)
     public static final java.lang.Character maxByOrNull(char[],kotlin.jvm.functions.Function1)
@@ -15472,6 +15664,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long maxByOrNull(long[],kotlin.jvm.functions.Function1)
     public static final java.lang.Object maxByOrNull(java.lang.Object[],kotlin.jvm.functions.Function1)
     public static final java.lang.Short maxByOrNull(short[],kotlin.jvm.functions.Function1)
+    public static final byte maxByOrThrow(byte[],kotlin.jvm.functions.Function1)
+    public static final char maxByOrThrow(char[],kotlin.jvm.functions.Function1)
+    public static final double maxByOrThrow(double[],kotlin.jvm.functions.Function1)
+    public static final float maxByOrThrow(float[],kotlin.jvm.functions.Function1)
+    public static final int maxByOrThrow(int[],kotlin.jvm.functions.Function1)
+    public static final long maxByOrThrow(long[],kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxByOrThrow(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final short maxByOrThrow(short[],kotlin.jvm.functions.Function1)
+    public static final boolean maxByOrThrow(boolean[],kotlin.jvm.functions.Function1)
     private static final double maxOf(byte[],kotlin.jvm.functions.Function1)
     private static final double maxOf(char[],kotlin.jvm.functions.Function1)
     private static final double maxOf(double[],kotlin.jvm.functions.Function1)
@@ -15554,15 +15755,16 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Integer maxOrNull(int[])
     public static final java.lang.Long maxOrNull(long[])
     public static final java.lang.Short maxOrNull(short[])
-    public static final synthetic java.lang.Boolean maxWith(boolean[],java.util.Comparator)
-    public static final synthetic java.lang.Byte maxWith(byte[],java.util.Comparator)
-    public static final synthetic java.lang.Character maxWith(char[],java.util.Comparator)
-    public static final synthetic java.lang.Double maxWith(double[],java.util.Comparator)
-    public static final synthetic java.lang.Float maxWith(float[],java.util.Comparator)
-    public static final synthetic java.lang.Integer maxWith(int[],java.util.Comparator)
-    public static final synthetic java.lang.Long maxWith(long[],java.util.Comparator)
-    public static final synthetic java.lang.Object maxWith(java.lang.Object[],java.util.Comparator)
-    public static final synthetic java.lang.Short maxWith(short[],java.util.Comparator)
+    public static final byte maxOrThrow(byte[])
+    public static final char maxOrThrow(char[])
+    public static final double maxOrThrow(double[])
+    public static final double maxOrThrow(java.lang.Double[])
+    public static final float maxOrThrow(float[])
+    public static final float maxOrThrow(java.lang.Float[])
+    public static final int maxOrThrow(int[])
+    public static final long maxOrThrow(long[])
+    public static final java.lang.Comparable maxOrThrow(java.lang.Comparable[])
+    public static final short maxOrThrow(short[])
     public static final java.lang.Boolean maxWithOrNull(boolean[],java.util.Comparator)
     public static final java.lang.Byte maxWithOrNull(byte[],java.util.Comparator)
     public static final java.lang.Character maxWithOrNull(char[],java.util.Comparator)
@@ -15572,25 +15774,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long maxWithOrNull(long[],java.util.Comparator)
     public static final java.lang.Object maxWithOrNull(java.lang.Object[],java.util.Comparator)
     public static final java.lang.Short maxWithOrNull(short[],java.util.Comparator)
-    public static final synthetic java.lang.Byte min(byte[])
-    public static final synthetic java.lang.Character min(char[])
-    public static final synthetic java.lang.Comparable min(java.lang.Comparable[])
-    public static final synthetic java.lang.Double min(double[])
-    public static final synthetic java.lang.Double min(java.lang.Double[])
-    public static final synthetic java.lang.Float min(float[])
-    public static final synthetic java.lang.Float min(java.lang.Float[])
-    public static final synthetic java.lang.Integer min(int[])
-    public static final synthetic java.lang.Long min(long[])
-    public static final synthetic java.lang.Short min(short[])
-    public static final synthetic java.lang.Boolean minBy(boolean[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Byte minBy(byte[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Character minBy(char[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Double minBy(double[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Float minBy(float[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Integer minBy(int[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Long minBy(long[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Object minBy(java.lang.Object[],kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Short minBy(short[],kotlin.jvm.functions.Function1)
+    public static final byte maxWithOrThrow(byte[],java.util.Comparator)
+    public static final char maxWithOrThrow(char[],java.util.Comparator)
+    public static final double maxWithOrThrow(double[],java.util.Comparator)
+    public static final float maxWithOrThrow(float[],java.util.Comparator)
+    public static final int maxWithOrThrow(int[],java.util.Comparator)
+    public static final long maxWithOrThrow(long[],java.util.Comparator)
+    public static final java.lang.Object maxWithOrThrow(java.lang.Object[],java.util.Comparator)
+    public static final short maxWithOrThrow(short[],java.util.Comparator)
+    public static final boolean maxWithOrThrow(boolean[],java.util.Comparator)
     public static final java.lang.Boolean minByOrNull(boolean[],kotlin.jvm.functions.Function1)
     public static final java.lang.Byte minByOrNull(byte[],kotlin.jvm.functions.Function1)
     public static final java.lang.Character minByOrNull(char[],kotlin.jvm.functions.Function1)
@@ -15600,6 +15792,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long minByOrNull(long[],kotlin.jvm.functions.Function1)
     public static final java.lang.Object minByOrNull(java.lang.Object[],kotlin.jvm.functions.Function1)
     public static final java.lang.Short minByOrNull(short[],kotlin.jvm.functions.Function1)
+    public static final byte minByOrThrow(byte[],kotlin.jvm.functions.Function1)
+    public static final char minByOrThrow(char[],kotlin.jvm.functions.Function1)
+    public static final double minByOrThrow(double[],kotlin.jvm.functions.Function1)
+    public static final float minByOrThrow(float[],kotlin.jvm.functions.Function1)
+    public static final int minByOrThrow(int[],kotlin.jvm.functions.Function1)
+    public static final long minByOrThrow(long[],kotlin.jvm.functions.Function1)
+    public static final java.lang.Object minByOrThrow(java.lang.Object[],kotlin.jvm.functions.Function1)
+    public static final short minByOrThrow(short[],kotlin.jvm.functions.Function1)
+    public static final boolean minByOrThrow(boolean[],kotlin.jvm.functions.Function1)
     private static final double minOf(byte[],kotlin.jvm.functions.Function1)
     private static final double minOf(char[],kotlin.jvm.functions.Function1)
     private static final double minOf(double[],kotlin.jvm.functions.Function1)
@@ -15682,15 +15883,16 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Integer minOrNull(int[])
     public static final java.lang.Long minOrNull(long[])
     public static final java.lang.Short minOrNull(short[])
-    public static final synthetic java.lang.Boolean minWith(boolean[],java.util.Comparator)
-    public static final synthetic java.lang.Byte minWith(byte[],java.util.Comparator)
-    public static final synthetic java.lang.Character minWith(char[],java.util.Comparator)
-    public static final synthetic java.lang.Double minWith(double[],java.util.Comparator)
-    public static final synthetic java.lang.Float minWith(float[],java.util.Comparator)
-    public static final synthetic java.lang.Integer minWith(int[],java.util.Comparator)
-    public static final synthetic java.lang.Long minWith(long[],java.util.Comparator)
-    public static final synthetic java.lang.Object minWith(java.lang.Object[],java.util.Comparator)
-    public static final synthetic java.lang.Short minWith(short[],java.util.Comparator)
+    public static final byte minOrThrow(byte[])
+    public static final char minOrThrow(char[])
+    public static final double minOrThrow(double[])
+    public static final double minOrThrow(java.lang.Double[])
+    public static final float minOrThrow(float[])
+    public static final float minOrThrow(java.lang.Float[])
+    public static final int minOrThrow(int[])
+    public static final long minOrThrow(long[])
+    public static final java.lang.Comparable minOrThrow(java.lang.Comparable[])
+    public static final short minOrThrow(short[])
     public static final java.lang.Boolean minWithOrNull(boolean[],java.util.Comparator)
     public static final java.lang.Byte minWithOrNull(byte[],java.util.Comparator)
     public static final java.lang.Character minWithOrNull(char[],java.util.Comparator)
@@ -15700,6 +15902,15 @@ kotlin.collections.ArraysKt___ArraysKt:
     public static final java.lang.Long minWithOrNull(long[],java.util.Comparator)
     public static final java.lang.Object minWithOrNull(java.lang.Object[],java.util.Comparator)
     public static final java.lang.Short minWithOrNull(short[],java.util.Comparator)
+    public static final byte minWithOrThrow(byte[],java.util.Comparator)
+    public static final char minWithOrThrow(char[],java.util.Comparator)
+    public static final double minWithOrThrow(double[],java.util.Comparator)
+    public static final float minWithOrThrow(float[],java.util.Comparator)
+    public static final int minWithOrThrow(int[],java.util.Comparator)
+    public static final long minWithOrThrow(long[],java.util.Comparator)
+    public static final java.lang.Object minWithOrThrow(java.lang.Object[],java.util.Comparator)
+    public static final short minWithOrThrow(short[],java.util.Comparator)
+    public static final boolean minWithOrThrow(boolean[],java.util.Comparator)
     public static final boolean none(byte[])
     public static final boolean none(byte[],kotlin.jvm.functions.Function1)
     public static final boolean none(char[])
@@ -16488,6 +16699,16 @@ kotlin.collections.CollectionsKt___CollectionsJvmKt:
     public void <init>()
     public static final java.util.List filterIsInstance(java.lang.Iterable,java.lang.Class)
     public static final java.util.Collection filterIsInstanceTo(java.lang.Iterable,java.util.Collection,java.lang.Class)
+    public static final synthetic java.lang.Comparable max(java.lang.Iterable)
+    public static final synthetic java.lang.Double max(java.lang.Iterable)
+    public static final synthetic java.lang.Float max(java.lang.Iterable)
+    public static final synthetic java.lang.Object maxBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object maxWith(java.lang.Iterable,java.util.Comparator)
+    public static final synthetic java.lang.Comparable min(java.lang.Iterable)
+    public static final synthetic java.lang.Double min(java.lang.Iterable)
+    public static final synthetic java.lang.Float min(java.lang.Iterable)
+    public static final synthetic java.lang.Object minBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object minWith(java.lang.Iterable,java.util.Comparator)
     public static final void reverse(java.util.List)
     private static final java.math.BigDecimal sumOfBigDecimal(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.math.BigInteger sumOfBigInteger(java.lang.Iterable,kotlin.jvm.functions.Function1)
@@ -16608,11 +16829,8 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.util.List mapNotNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(java.lang.Iterable,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(java.lang.Iterable,java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Comparable max(java.lang.Iterable)
-    public static final synthetic java.lang.Double max(java.lang.Iterable)
-    public static final synthetic java.lang.Float max(java.lang.Iterable)
-    public static final synthetic java.lang.Object maxBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.lang.Object maxByOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxByOrThrow(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final double maxOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final float maxOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
@@ -16624,13 +16842,13 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.lang.Comparable maxOrNull(java.lang.Iterable)
     public static final java.lang.Double maxOrNull(java.lang.Iterable)
     public static final java.lang.Float maxOrNull(java.lang.Iterable)
-    public static final synthetic java.lang.Object maxWith(java.lang.Iterable,java.util.Comparator)
+    public static final double maxOrThrow(java.lang.Iterable)
+    public static final float maxOrThrow(java.lang.Iterable)
+    public static final java.lang.Comparable maxOrThrow(java.lang.Iterable)
     public static final java.lang.Object maxWithOrNull(java.lang.Iterable,java.util.Comparator)
-    public static final synthetic java.lang.Comparable min(java.lang.Iterable)
-    public static final synthetic java.lang.Double min(java.lang.Iterable)
-    public static final synthetic java.lang.Float min(java.lang.Iterable)
-    public static final synthetic java.lang.Object minBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxWithOrThrow(java.lang.Iterable,java.util.Comparator)
     public static final java.lang.Object minByOrNull(java.lang.Iterable,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object minByOrThrow(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final double minOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final float minOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(java.lang.Iterable,kotlin.jvm.functions.Function1)
@@ -16641,8 +16859,11 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     private static final java.lang.Object minOfWithOrNull(java.lang.Iterable,java.util.Comparator,kotlin.jvm.functions.Function1)
     public static final java.lang.Double minOrNull(java.lang.Iterable)
     public static final java.lang.Float minOrNull(java.lang.Iterable)
-    public static final synthetic java.lang.Object minWith(java.lang.Iterable,java.util.Comparator)
+    public static final double minOrThrow(java.lang.Iterable)
+    public static final float minOrThrow(java.lang.Iterable)
+    public static final java.lang.Comparable minOrThrow(java.lang.Iterable)
     public static final java.lang.Object minWithOrNull(java.lang.Iterable,java.util.Comparator)
+    public static final java.lang.Object minWithOrThrow(java.lang.Iterable,java.util.Comparator)
     public static final java.util.List minus(java.lang.Iterable,java.lang.Iterable)
     public static final java.util.List minus(java.lang.Iterable,java.lang.Object)
     public static final java.util.List minus(java.lang.Iterable,kotlin.sequences.Sequence)
@@ -16740,15 +16961,23 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final java.util.List zipWithNext(java.lang.Iterable)
     public static final java.util.List zipWithNext(java.lang.Iterable,kotlin.jvm.functions.Function2)
 kotlin.collections.DoubleIterator
+kotlin.collections.EmptyIterator:
+    public void add(java.lang.Void)
+    public void set(java.lang.Void)
 kotlin.collections.EmptyList:
     private static final long serialVersionUID
+    public void add(int,java.lang.Void)
+    public boolean add(java.lang.Void)
     private final java.lang.Object readResolve()
     public java.lang.Void remove(int)
+    public java.lang.Void set(int,java.lang.Void)
 kotlin.collections.EmptyMap:
     private static final long serialVersionUID
+    public java.lang.Void put(java.lang.Object,java.lang.Void)
     private final java.lang.Object readResolve()
 kotlin.collections.EmptySet:
     private static final long serialVersionUID
+    public boolean add(java.lang.Void)
     private final java.lang.Object readResolve()
 kotlin.collections.FloatIterator
 kotlin.collections.Grouping
@@ -16851,6 +17080,12 @@ kotlin.collections.MapsKt__MapsKt:
     public static final java.util.Map toMap(kotlin.Pair[])
     public static final java.util.Map toMutableMap(java.util.Map)
     private static final kotlin.Pair toPair(java.util.Map$Entry)
+kotlin.collections.MapsKt___MapsJvmKt:
+    public void <init>()
+    private static final synthetic java.util.Map$Entry maxBy(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final synthetic java.util.Map$Entry maxWith(java.util.Map,java.util.Comparator)
+    public static final synthetic java.util.Map$Entry minBy(java.util.Map,kotlin.jvm.functions.Function1)
+    public static final synthetic java.util.Map$Entry minWith(java.util.Map,java.util.Comparator)
 kotlin.collections.MapsKt___MapsKt:
     public void <init>()
     public static final boolean all(java.util.Map,kotlin.jvm.functions.Function1)
@@ -16871,8 +17106,8 @@ kotlin.collections.MapsKt___MapsKt:
     public static final java.util.List mapNotNull(java.util.Map,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(java.util.Map,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(java.util.Map,java.util.Collection,kotlin.jvm.functions.Function1)
-    private static final synthetic java.util.Map$Entry maxBy(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.util.Map$Entry maxByOrNull(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final java.util.Map$Entry maxByOrThrow(java.util.Map,kotlin.jvm.functions.Function1)
     private static final double maxOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final float maxOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(java.util.Map,kotlin.jvm.functions.Function1)
@@ -16881,10 +17116,10 @@ kotlin.collections.MapsKt___MapsKt:
     private static final java.lang.Float maxOfOrNull(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Object maxOfWith(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object maxOfWithOrNull(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
-    private static final synthetic java.util.Map$Entry maxWith(java.util.Map,java.util.Comparator)
     private static final java.util.Map$Entry maxWithOrNull(java.util.Map,java.util.Comparator)
-    public static final synthetic java.util.Map$Entry minBy(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final java.util.Map$Entry maxWithOrThrow(java.util.Map,java.util.Comparator)
     private static final java.util.Map$Entry minByOrNull(java.util.Map,kotlin.jvm.functions.Function1)
+    private static final java.util.Map$Entry minByOrThrow(java.util.Map,kotlin.jvm.functions.Function1)
     private static final double minOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final float minOf(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(java.util.Map,kotlin.jvm.functions.Function1)
@@ -16893,8 +17128,8 @@ kotlin.collections.MapsKt___MapsKt:
     private static final java.lang.Float minOfOrNull(java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.lang.Object minOfWith(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object minOfWithOrNull(java.util.Map,java.util.Comparator,kotlin.jvm.functions.Function1)
-    public static final synthetic java.util.Map$Entry minWith(java.util.Map,java.util.Comparator)
     private static final java.util.Map$Entry minWithOrNull(java.util.Map,java.util.Comparator)
+    private static final java.util.Map$Entry minWithOrThrow(java.util.Map,java.util.Comparator)
     public static final boolean none(java.util.Map)
     public static final boolean none(java.util.Map,kotlin.jvm.functions.Function1)
     public static final java.util.Map onEach(java.util.Map,kotlin.jvm.functions.Function1)
@@ -16952,12 +17187,8 @@ kotlin.collections.SlidingWindowKt
 kotlin.collections.State
 kotlin.collections.TypeAliasesKt
 kotlin.collections.UArraySortingKt
-kotlin.collections.UByteIterator
 kotlin.collections.UCollectionsKt
 kotlin.collections.UCollectionsKt___UCollectionsKt
-kotlin.collections.UIntIterator
-kotlin.collections.ULongIterator
-kotlin.collections.UShortIterator
 kotlin.collections.builders.AbstractMapBuilderEntrySet
 kotlin.collections.builders.ListBuilder$Itr
 kotlin.collections.builders.ListBuilder
@@ -17182,6 +17413,7 @@ kotlin.internal.DynamicExtension
 kotlin.internal.Exact
 kotlin.internal.HidesMembers
 kotlin.internal.InlineOnly
+kotlin.internal.IntrinsicConstEvaluation
 kotlin.internal.LowPriorityInOverloadResolution
 kotlin.internal.NoInfer
 kotlin.internal.OnlyInputTypes
@@ -17253,6 +17485,8 @@ kotlin.jdk7.AutoCloseableKt
 kotlin.js.ExperimentalJsExport
 kotlin.jvm.JvmClassMappingKt:
     public static final kotlin.reflect.KClass getAnnotationClass(java.lang.annotation.Annotation)
+    private static final java.lang.Class getDeclaringJavaClass(java.lang.Enum)
+    public static synthetic void getDeclaringJavaClass$annotations(java.lang.Enum)
     public static final java.lang.Class getJavaClass(java.lang.Object)
     public static final java.lang.Class getJavaClass(kotlin.reflect.KClass)
     public static synthetic void getJavaClass$annotations(kotlin.reflect.KClass)
@@ -17261,6 +17495,7 @@ kotlin.jvm.JvmClassMappingKt:
     public static synthetic void getRuntimeClassOfKClassInstance$annotations(kotlin.reflect.KClass)
     public static final synthetic boolean isArrayOf(java.lang.Object[])
 kotlin.jvm.JvmDefault
+kotlin.jvm.JvmDefaultWithCompatibility
 kotlin.jvm.JvmDefaultWithoutCompatibility
 kotlin.jvm.JvmField
 kotlin.jvm.JvmInline
@@ -17392,6 +17627,7 @@ kotlin.jvm.internal.DoubleSpreadBuilder
 kotlin.jvm.internal.EnumCompanionObject
 kotlin.jvm.internal.FloatCompanionObject
 kotlin.jvm.internal.FloatSpreadBuilder
+kotlin.jvm.internal.FunInterfaceConstructorReference
 kotlin.jvm.internal.FunctionAdapter
 kotlin.jvm.internal.FunctionImpl
 kotlin.jvm.internal.InlineMarker
@@ -17410,7 +17646,6 @@ kotlin.jvm.internal.Intrinsics:
     public static void checkFieldIsNotNull(java.lang.Object,java.lang.String,java.lang.String)
     public static void checkHasClass(java.lang.String)
     public static void checkHasClass(java.lang.String,java.lang.String)
-    public static void checkNotNull(java.lang.Object,java.lang.String)
     public static void checkParameterIsNotNull(java.lang.Object,java.lang.String)
     public static void checkReturnedValueIsNotNull(java.lang.Object,java.lang.String)
     public static void checkReturnedValueIsNotNull(java.lang.Object,java.lang.String,java.lang.String)
@@ -17425,7 +17660,6 @@ kotlin.jvm.internal.Intrinsics:
     public static void throwIllegalArgument(java.lang.String)
     public static void throwIllegalState()
     public static void throwIllegalState(java.lang.String)
-    public static void throwJavaNpe(java.lang.String)
     public static void throwNpe()
     public static void throwNpe(java.lang.String)
     private static void throwParameterIsNullIAE(java.lang.String)
@@ -17513,6 +17747,7 @@ kotlin.jvm.internal.ReflectionFactory:
     public kotlin.reflect.KType typeOf(kotlin.reflect.KClassifier,java.util.List,boolean)
     public kotlin.reflect.KTypeParameter typeParameter(java.lang.Object,java.lang.String,kotlin.reflect.KVariance,boolean)
 kotlin.jvm.internal.RepeatableContainer
+kotlin.jvm.internal.SerializedIr
 kotlin.jvm.internal.ShortCompanionObject
 kotlin.jvm.internal.ShortSpreadBuilder
 kotlin.jvm.internal.SpreadBuilder
@@ -17652,12 +17887,15 @@ kotlin.ranges.ClosedFloatingPointRange$DefaultImpls
 kotlin.ranges.ClosedFloatingPointRange
 kotlin.ranges.ClosedRange$DefaultImpls
 kotlin.ranges.ClosedRange
+kotlin.ranges.ComparableOpenEndRange
 kotlin.ranges.ComparableRange
 kotlin.ranges.IntProgressionIterator:
     public final int getStep()
 kotlin.ranges.IntRange:
-    public boolean contains(int)
     public synthetic bridge boolean contains(java.lang.Comparable)
+    public synthetic bridge java.lang.Comparable getEndExclusive()
+    public java.lang.Integer getEndExclusive()
+    public static synthetic void getEndExclusive$annotations()
     public synthetic bridge java.lang.Comparable getEndInclusive()
     public synthetic bridge java.lang.Comparable getStart()
 kotlin.ranges.LongProgression$Companion
@@ -17665,15 +17903,23 @@ kotlin.ranges.LongProgression
 kotlin.ranges.LongProgressionIterator
 kotlin.ranges.LongRange$Companion
 kotlin.ranges.LongRange
+kotlin.ranges.OpenEndDoubleRange
+kotlin.ranges.OpenEndFloatRange
+kotlin.ranges.OpenEndRange$DefaultImpls
+kotlin.ranges.OpenEndRange
 kotlin.ranges.RangesKt:
     private void <init>()
 kotlin.ranges.RangesKt__RangesKt:
     public void <init>()
     public static final void checkStepIsPositive(boolean,java.lang.Number)
-    private static final boolean contains(java.lang.Iterable,java.lang.Object)
+    private static final boolean contains(kotlin.ranges.ClosedRange,java.lang.Object)
+    private static final boolean contains(kotlin.ranges.OpenEndRange,java.lang.Object)
     public static final kotlin.ranges.ClosedFloatingPointRange rangeTo(double,double)
     public static final kotlin.ranges.ClosedFloatingPointRange rangeTo(float,float)
     public static final kotlin.ranges.ClosedRange rangeTo(java.lang.Comparable,java.lang.Comparable)
+    public static final kotlin.ranges.OpenEndRange rangeUntil(double,double)
+    public static final kotlin.ranges.OpenEndRange rangeUntil(float,float)
+    public static final kotlin.ranges.OpenEndRange rangeUntil(java.lang.Comparable,java.lang.Comparable)
 kotlin.ranges.RangesKt___RangesKt:
     public void <init>()
     public static final synthetic boolean byteRangeContains(kotlin.ranges.ClosedRange,double)
@@ -17681,6 +17927,9 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final boolean byteRangeContains(kotlin.ranges.ClosedRange,int)
     public static final boolean byteRangeContains(kotlin.ranges.ClosedRange,long)
     public static final boolean byteRangeContains(kotlin.ranges.ClosedRange,short)
+    public static final boolean byteRangeContains(kotlin.ranges.OpenEndRange,int)
+    public static final boolean byteRangeContains(kotlin.ranges.OpenEndRange,long)
+    public static final boolean byteRangeContains(kotlin.ranges.OpenEndRange,short)
     public static final byte coerceAtLeast(byte,byte)
     public static final double coerceAtLeast(double,double)
     public static final float coerceAtLeast(float,float)
@@ -17702,13 +17951,20 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final java.lang.Comparable coerceIn(java.lang.Comparable,kotlin.ranges.ClosedRange)
     public static final short coerceIn(short,short,short)
     private static final boolean contains(kotlin.ranges.CharRange,java.lang.Character)
+    private static final boolean contains(kotlin.ranges.IntRange,byte)
+    private static final boolean contains(kotlin.ranges.IntRange,long)
     private static final boolean contains(kotlin.ranges.IntRange,java.lang.Integer)
+    private static final boolean contains(kotlin.ranges.IntRange,short)
+    private static final boolean contains(kotlin.ranges.LongRange,byte)
+    private static final boolean contains(kotlin.ranges.LongRange,int)
     private static final boolean contains(kotlin.ranges.LongRange,java.lang.Long)
+    private static final boolean contains(kotlin.ranges.LongRange,short)
     public static final synthetic boolean doubleRangeContains(kotlin.ranges.ClosedRange,byte)
     public static final boolean doubleRangeContains(kotlin.ranges.ClosedRange,float)
     public static final synthetic boolean doubleRangeContains(kotlin.ranges.ClosedRange,int)
     public static final synthetic boolean doubleRangeContains(kotlin.ranges.ClosedRange,long)
     public static final synthetic boolean doubleRangeContains(kotlin.ranges.ClosedRange,short)
+    public static final boolean doubleRangeContains(kotlin.ranges.OpenEndRange,float)
     public static final kotlin.ranges.CharProgression downTo(char,char)
     public static final kotlin.ranges.IntProgression downTo(byte,byte)
     public static final kotlin.ranges.IntProgression downTo(byte,int)
@@ -17725,6 +17981,12 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final kotlin.ranges.LongProgression downTo(long,long)
     public static final kotlin.ranges.LongProgression downTo(long,short)
     public static final kotlin.ranges.LongProgression downTo(short,long)
+    public static final char first(kotlin.ranges.CharProgression)
+    public static final int first(kotlin.ranges.IntProgression)
+    public static final long first(kotlin.ranges.LongProgression)
+    public static final java.lang.Character firstOrNull(kotlin.ranges.CharProgression)
+    public static final java.lang.Integer firstOrNull(kotlin.ranges.IntProgression)
+    public static final java.lang.Long firstOrNull(kotlin.ranges.LongProgression)
     public static final synthetic boolean floatRangeContains(kotlin.ranges.ClosedRange,byte)
     public static final boolean floatRangeContains(kotlin.ranges.ClosedRange,double)
     public static final synthetic boolean floatRangeContains(kotlin.ranges.ClosedRange,int)
@@ -17735,11 +17997,23 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final synthetic boolean intRangeContains(kotlin.ranges.ClosedRange,float)
     public static final boolean intRangeContains(kotlin.ranges.ClosedRange,long)
     public static final boolean intRangeContains(kotlin.ranges.ClosedRange,short)
+    public static final boolean intRangeContains(kotlin.ranges.OpenEndRange,byte)
+    public static final boolean intRangeContains(kotlin.ranges.OpenEndRange,long)
+    public static final boolean intRangeContains(kotlin.ranges.OpenEndRange,short)
+    public static final char last(kotlin.ranges.CharProgression)
+    public static final int last(kotlin.ranges.IntProgression)
+    public static final long last(kotlin.ranges.LongProgression)
+    public static final java.lang.Character lastOrNull(kotlin.ranges.CharProgression)
+    public static final java.lang.Integer lastOrNull(kotlin.ranges.IntProgression)
+    public static final java.lang.Long lastOrNull(kotlin.ranges.LongProgression)
     public static final boolean longRangeContains(kotlin.ranges.ClosedRange,byte)
     public static final synthetic boolean longRangeContains(kotlin.ranges.ClosedRange,double)
     public static final synthetic boolean longRangeContains(kotlin.ranges.ClosedRange,float)
     public static final boolean longRangeContains(kotlin.ranges.ClosedRange,int)
     public static final boolean longRangeContains(kotlin.ranges.ClosedRange,short)
+    public static final boolean longRangeContains(kotlin.ranges.OpenEndRange,byte)
+    public static final boolean longRangeContains(kotlin.ranges.OpenEndRange,int)
+    public static final boolean longRangeContains(kotlin.ranges.OpenEndRange,short)
     private static final char random(kotlin.ranges.CharRange)
     public static final char random(kotlin.ranges.CharRange,kotlin.random.Random)
     private static final int random(kotlin.ranges.IntRange)
@@ -17752,6 +18026,23 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final java.lang.Integer randomOrNull(kotlin.ranges.IntRange,kotlin.random.Random)
     private static final java.lang.Long randomOrNull(kotlin.ranges.LongRange)
     public static final java.lang.Long randomOrNull(kotlin.ranges.LongRange,kotlin.random.Random)
+    private static final kotlin.ranges.CharRange rangeUntil(char,char)
+    private static final kotlin.ranges.IntRange rangeUntil(byte,byte)
+    private static final kotlin.ranges.IntRange rangeUntil(byte,int)
+    private static final kotlin.ranges.IntRange rangeUntil(byte,short)
+    private static final kotlin.ranges.IntRange rangeUntil(int,byte)
+    private static final kotlin.ranges.IntRange rangeUntil(int,int)
+    private static final kotlin.ranges.IntRange rangeUntil(int,short)
+    private static final kotlin.ranges.IntRange rangeUntil(short,byte)
+    private static final kotlin.ranges.IntRange rangeUntil(short,int)
+    private static final kotlin.ranges.IntRange rangeUntil(short,short)
+    private static final kotlin.ranges.LongRange rangeUntil(byte,long)
+    private static final kotlin.ranges.LongRange rangeUntil(int,long)
+    private static final kotlin.ranges.LongRange rangeUntil(long,byte)
+    private static final kotlin.ranges.LongRange rangeUntil(long,int)
+    private static final kotlin.ranges.LongRange rangeUntil(long,long)
+    private static final kotlin.ranges.LongRange rangeUntil(long,short)
+    private static final kotlin.ranges.LongRange rangeUntil(short,long)
     public static final kotlin.ranges.CharProgression reversed(kotlin.ranges.CharProgression)
     public static final kotlin.ranges.IntProgression reversed(kotlin.ranges.IntProgression)
     public static final kotlin.ranges.LongProgression reversed(kotlin.ranges.LongProgression)
@@ -17760,6 +18051,9 @@ kotlin.ranges.RangesKt___RangesKt:
     public static final synthetic boolean shortRangeContains(kotlin.ranges.ClosedRange,float)
     public static final boolean shortRangeContains(kotlin.ranges.ClosedRange,int)
     public static final boolean shortRangeContains(kotlin.ranges.ClosedRange,long)
+    public static final boolean shortRangeContains(kotlin.ranges.OpenEndRange,byte)
+    public static final boolean shortRangeContains(kotlin.ranges.OpenEndRange,int)
+    public static final boolean shortRangeContains(kotlin.ranges.OpenEndRange,long)
     public static final kotlin.ranges.CharProgression step(kotlin.ranges.CharProgression,int)
     public static final kotlin.ranges.IntProgression step(kotlin.ranges.IntProgression,int)
     public static final kotlin.ranges.LongProgression step(kotlin.ranges.LongProgression,long)
@@ -17901,7 +18195,6 @@ kotlin.sequences.SequenceBuilderIterator
 kotlin.sequences.SequenceScope
 kotlin.sequences.SequencesKt:
     private void <init>()
-kotlin.sequences.SequencesKt__SequenceBuilderKt$buildSequence$$inlined$Sequence$1
 kotlin.sequences.SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1
 kotlin.sequences.SequencesKt__SequenceBuilderKt:
     private static final int State_Done
@@ -17911,9 +18204,6 @@ kotlin.sequences.SequencesKt__SequenceBuilderKt:
     private static final int State_NotReady
     private static final int State_Ready
     public void <init>()
-    public static synthetic void SequenceBuilder$annotations()
-    private static final java.util.Iterator buildIterator(kotlin.jvm.functions.Function2)
-    private static final kotlin.sequences.Sequence buildSequence(kotlin.jvm.functions.Function2)
     public static final java.util.Iterator iterator(kotlin.jvm.functions.Function2)
     public static final kotlin.sequences.Sequence sequence(kotlin.jvm.functions.Function2)
 kotlin.sequences.SequencesKt__SequencesJVMKt:
@@ -17950,6 +18240,16 @@ kotlin.sequences.SequencesKt___SequencesJvmKt:
     public void <init>()
     public static final kotlin.sequences.Sequence filterIsInstance(kotlin.sequences.Sequence,java.lang.Class)
     public static final java.util.Collection filterIsInstanceTo(kotlin.sequences.Sequence,java.util.Collection,java.lang.Class)
+    public static final synthetic java.lang.Comparable max(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Double max(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Float max(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Object maxBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object maxWith(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final synthetic java.lang.Comparable min(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Double min(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Float min(kotlin.sequences.Sequence)
+    public static final synthetic java.lang.Object minBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Object minWith(kotlin.sequences.Sequence,java.util.Comparator)
     private static final java.math.BigDecimal sumOfBigDecimal(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final java.math.BigInteger sumOfBigInteger(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.util.SortedSet toSortedSet(kotlin.sequences.Sequence)
@@ -18073,11 +18373,8 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final kotlin.sequences.Sequence mapNotNull(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(kotlin.sequences.Sequence,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(kotlin.sequences.Sequence,java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Comparable max(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Double max(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Float max(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object maxBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     public static final java.lang.Object maxByOrNull(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxByOrThrow(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final double maxOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final float maxOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
@@ -18089,13 +18386,13 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final java.lang.Comparable maxOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Double maxOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Float maxOrNull(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object maxWith(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final double maxOrThrow(kotlin.sequences.Sequence)
+    public static final float maxOrThrow(kotlin.sequences.Sequence)
+    public static final java.lang.Comparable maxOrThrow(kotlin.sequences.Sequence)
     public static final java.lang.Object maxWithOrNull(kotlin.sequences.Sequence,java.util.Comparator)
-    public static final synthetic java.lang.Comparable min(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Double min(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Float min(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object minBy(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object maxWithOrThrow(kotlin.sequences.Sequence,java.util.Comparator)
     public static final java.lang.Object minByOrNull(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
+    public static final java.lang.Object minByOrThrow(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final double minOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final float minOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(kotlin.sequences.Sequence,kotlin.jvm.functions.Function1)
@@ -18107,8 +18404,11 @@ kotlin.sequences.SequencesKt___SequencesKt:
     public static final java.lang.Comparable minOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Double minOrNull(kotlin.sequences.Sequence)
     public static final java.lang.Float minOrNull(kotlin.sequences.Sequence)
-    public static final synthetic java.lang.Object minWith(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final double minOrThrow(kotlin.sequences.Sequence)
+    public static final float minOrThrow(kotlin.sequences.Sequence)
+    public static final java.lang.Comparable minOrThrow(kotlin.sequences.Sequence)
     public static final java.lang.Object minWithOrNull(kotlin.sequences.Sequence,java.util.Comparator)
+    public static final java.lang.Object minWithOrThrow(kotlin.sequences.Sequence,java.util.Comparator)
     public static final kotlin.sequences.Sequence minus(kotlin.sequences.Sequence,java.lang.Iterable)
     public static final kotlin.sequences.Sequence minus(kotlin.sequences.Sequence,java.lang.Object)
     public static final kotlin.sequences.Sequence minus(kotlin.sequences.Sequence,kotlin.sequences.Sequence)
@@ -18612,6 +18912,12 @@ kotlin.text.StringsKt__StringsKt:
 kotlin.text.StringsKt___StringsJvmKt:
     public void <init>()
     private static final char elementAt(java.lang.CharSequence,int)
+    public static final synthetic java.lang.Character max(java.lang.CharSequence)
+    public static final synthetic java.lang.Character maxBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character maxWith(java.lang.CharSequence,java.util.Comparator)
+    public static final synthetic java.lang.Character min(java.lang.CharSequence)
+    public static final synthetic java.lang.Character minBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final synthetic java.lang.Character minWith(java.lang.CharSequence,java.util.Comparator)
     private static final java.math.BigDecimal sumOfBigDecimal(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final java.math.BigInteger sumOfBigInteger(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.util.SortedSet toSortedSet(java.lang.CharSequence)
@@ -18701,9 +19007,8 @@ kotlin.text.StringsKt___StringsKt:
     public static final java.util.List mapNotNull(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapNotNullTo(java.lang.CharSequence,java.util.Collection,kotlin.jvm.functions.Function1)
     public static final java.util.Collection mapTo(java.lang.CharSequence,java.util.Collection,kotlin.jvm.functions.Function1)
-    public static final synthetic java.lang.Character max(java.lang.CharSequence)
-    public static final synthetic java.lang.Character maxBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.lang.Character maxByOrNull(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final char maxByOrThrow(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final double maxOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final float maxOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable maxOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
@@ -18713,11 +19018,11 @@ kotlin.text.StringsKt___StringsKt:
     private static final java.lang.Object maxOfWith(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object maxOfWithOrNull(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     public static final java.lang.Character maxOrNull(java.lang.CharSequence)
-    public static final synthetic java.lang.Character maxWith(java.lang.CharSequence,java.util.Comparator)
+    public static final char maxOrThrow(java.lang.CharSequence)
     public static final java.lang.Character maxWithOrNull(java.lang.CharSequence,java.util.Comparator)
-    public static final synthetic java.lang.Character min(java.lang.CharSequence)
-    public static final synthetic java.lang.Character minBy(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final char maxWithOrThrow(java.lang.CharSequence,java.util.Comparator)
     public static final java.lang.Character minByOrNull(java.lang.CharSequence,kotlin.jvm.functions.Function1)
+    public static final char minByOrThrow(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final double minOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final float minOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     private static final java.lang.Comparable minOf(java.lang.CharSequence,kotlin.jvm.functions.Function1)
@@ -18727,8 +19032,9 @@ kotlin.text.StringsKt___StringsKt:
     private static final java.lang.Object minOfWith(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     private static final java.lang.Object minOfWithOrNull(java.lang.CharSequence,java.util.Comparator,kotlin.jvm.functions.Function1)
     public static final java.lang.Character minOrNull(java.lang.CharSequence)
-    public static final synthetic java.lang.Character minWith(java.lang.CharSequence,java.util.Comparator)
+    public static final char minOrThrow(java.lang.CharSequence)
     public static final java.lang.Character minWithOrNull(java.lang.CharSequence,java.util.Comparator)
+    public static final char minWithOrThrow(java.lang.CharSequence,java.util.Comparator)
     public static final boolean none(java.lang.CharSequence)
     public static final boolean none(java.lang.CharSequence,kotlin.jvm.functions.Function1)
     public static final java.lang.CharSequence onEach(java.lang.CharSequence,kotlin.jvm.functions.Function1)
@@ -18818,11 +19124,15 @@ kotlin.time.DurationUnitKt__DurationUnitJvmKt
 kotlin.time.DurationUnitKt__DurationUnitKt$WhenMappings
 kotlin.time.DurationUnitKt__DurationUnitKt
 kotlin.time.ExperimentalTime
+kotlin.time.LongSaturatedMathKt
 kotlin.time.MeasureTimeKt
+kotlin.time.MonoTimeSourceKt
 kotlin.time.MonotonicTimeSource
 kotlin.time.TestTimeSource
+kotlin.time.TimeMark$DefaultImpls
 kotlin.time.TimeMark
 kotlin.time.TimeSource$Companion
+kotlin.time.TimeSource$Monotonic$ValueTimeMark
 kotlin.time.TimeSource$Monotonic
 kotlin.time.TimeSource
 kotlin.time.TimeSourceKt
@@ -20878,19 +21188,16 @@ com.google.android.exoplayer2.video.spherical.SceneRenderer:
 com.google.android.gms.common.GooglePlayServicesUtilLight:
     static boolean zza
     private static boolean zzb
-com.google.android.gms.common.api.TransformedResult
-com.google.android.gms.common.api.internal.BasePendingResult:
-    private volatile com.google.android.gms.common.api.internal.zada zap
-com.google.android.gms.common.api.internal.zada
 com.google.android.gms.common.api.internal.zadb:
     final synthetic com.google.android.gms.common.api.internal.zadc zaa
 com.google.android.gms.common.api.internal.zadc
 com.google.android.gms.common.internal.GmsClient:
     private static volatile java.util.concurrent.Executor zaa
-com.google.android.gms.internal.location.zzb:
-    private static com.google.android.gms.internal.location.zzd zzc
-com.google.android.gms.internal.location.zzd
-com.google.android.gms.maps.internal.zzca:
+com.google.android.gms.location.FusedLocationProviderClient:
+    public static final java.lang.String KEY_MOCK_LOCATION
+com.google.android.gms.location.SettingsClient:
+    public static final synthetic int zza
+com.google.android.gms.maps.internal.zzcb:
     public void <init>()
 io.flutter.Log:
     public static int ASSERT
@@ -20905,6 +21212,11 @@ io.flutter.embedding.engine.loader.ResourceExtractor:
 io.flutter.plugin.common.BinaryMessenger$-CC:
     public static io.flutter.plugin.common.BinaryMessenger$TaskQueue $default$makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger,io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public static void $default$setMessageHandler(io.flutter.plugin.common.BinaryMessenger,java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler,io.flutter.plugin.common.BinaryMessenger$TaskQueue)
+io.flutter.plugin.platform.PlatformView$-CC:
+    public static void $default$onInputConnectionLocked(io.flutter.plugin.platform.PlatformView)
+    public static void $default$onInputConnectionUnlocked(io.flutter.plugin.platform.PlatformView)
+io.flutter.plugin.platform.VirtualDisplayController:
+    private static java.lang.String TAG
 io.flutter.view.TextureRegistry$SurfaceTextureEntry$-CC
 kotlin.random.AbstractPlatformRandom:
     public int nextBits(int)

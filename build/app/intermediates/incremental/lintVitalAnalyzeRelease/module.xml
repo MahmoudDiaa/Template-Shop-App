@@ -1,14 +1,14 @@
 <lint-module
     format="1"
-    dir="D:\gahezit\flutter_boilerplate_orbits\android\app"
+    dir="/Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.1.2"
-    buildFolder="D:\gahezit\flutter_boilerplate_orbits\build\app"
-    bootClassPath="D:\SDK\Android\Sdk\platforms\android-32\android.jar;D:\SDK\Android\Sdk\build-tools\30.0.3\core-lambda-stubs.jar"
+    buildFolder="/Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/app"
+    bootClassPath="/Users/mahmouddiaa/Library/Android/sdk/platforms/android-33/android.jar:/Users/mahmouddiaa/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
-    compileTarget="android-32">
+    compileTarget="android-33">
   <lintOptions
       abortOnError="true"
       absolutePaths="true"

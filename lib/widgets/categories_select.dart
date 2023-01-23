@@ -278,7 +278,7 @@ class _CategoryListWidgetState extends State<_CategoryListWidget> {
             //I assumed you want to occupy the entire space of the card
 
             image: NetworkImage(
-              'https://orbitsdc.com/Uploads/SubCategories/${subCategories![index]!.icon ?? ''}',
+              'http://51.15.23.9:8085/Uploads/SubCategories/${subCategories[index].icon ?? ''}',
             ),
           ),
         ),

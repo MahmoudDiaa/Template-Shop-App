@@ -243,39 +243,43 @@ class _MediaPickerWidgetState extends State<MediaPickerWidget> {
     if (retrieveError != null) {
       return retrieveError;
     }
+    debugPrint("_imageFileList ${_imageFileList==null}");
     if (_imageFileList != null) {
       streamController = StreamController<List<XFile>>();
       streamController.add(_imageFileList!);
       return StreamBuilder<List<XFile>>(
         builder: (context, snaphsot) {
-          return Semantics(
-            label: 'image_picker_example_picked_images',
-            child: ListView.separated(
-              separatorBuilder: (context, position) {
-                return Divider();
-              },
-              key: UniqueKey(),
-              itemBuilder: (BuildContext context, int index) {
-                // Why network for web?
-                // See https://pub.dev/packages/image_picker#getting-ready-for-the-web-platform
-                return Dismissible(
-                  key: const Key('kjk'),
-                  onDismissed: (direction) {
-                    _imageFileList!.removeAt(index);
-                    streamController.add(_imageFileList!);
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(
-                            '${AppLocalizations.of(context).translate('imageDeleted')}')));
-                  },
-                  child: Semantics(
-                    label: 'image_picker_example_picked_image',
-                    child: kIsWeb
-                        ? Image.network(_imageFileList![index].path)
-                        : Image.file(File(_imageFileList![index].path)),
-                  ),
-                );
-              },
-              itemCount: _imageFileList!.length,
+          return Container(
+            width: 250,
+            child: Semantics(
+              label: 'image_picker_example_picked_images',
+              child: ListView.separated(
+                separatorBuilder: (context, position) {
+                  return Divider();
+                },
+                key: UniqueKey(),
+                itemBuilder: (BuildContext context, int index) {
+                  // Why network for web?
+                  // See https://pub.dev/packages/image_picker#getting-ready-for-the-web-platform
+                  return Dismissible(
+                    key: const Key('kjk'),
+                    onDismissed: (direction) {
+                      _imageFileList!.removeAt(index);
+                      streamController.add(_imageFileList!);
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text(
+                              '${AppLocalizations.of(context).translate('imageDeleted')}')));
+                    },
+                    child: Semantics(
+                      label: 'image_picker_example_picked_image',
+                      child: kIsWeb
+                          ? Image.network(_imageFileList![index].path)
+                          : Image.file(File(_imageFileList![index].path)),
+                    ),
+                  );
+                },
+                itemCount: _imageFileList!.length,
+              ),
             ),
           );
         },
@@ -295,6 +299,7 @@ class _MediaPickerWidgetState extends State<MediaPickerWidget> {
   }
 
   Widget _handlePreview() {
+    debugPrint("is video $isVideo");
     if (isVideo) {
       return _previewVideo();
     } else {

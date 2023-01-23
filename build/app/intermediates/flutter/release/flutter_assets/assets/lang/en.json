@@ -1,6 +1,7 @@
 {
   "login_start": "Below are list of strings for login",
   "login_et_user_email": "Enter user email",
+
   "enterCode": "Enter The Code",
   "login_et_user_displayname": "Enter display name",
   "login_et_user_firstname": "Enter first name",
@@ -85,7 +86,7 @@
   "noIncidentImages": "No Incident Images",
   "tryLoadAgain": "Try again to load images.",
   "home_tv_no_post_found_line2": "Try again or edit search criteria.",
-  "incidentSdsd": "Incident mark as done",
+  "incidentSdsd": "Mark as done",
   "incidentFinish": "Finish incident",
   "incidentUpping": "Incident upping",
   "incidentSdsdSuccessMessage": "Incident initially done",
@@ -94,7 +95,16 @@
   "incidentUppedSuccessMessage": "Upping done successfully",
   "incidentUppingInProgressMessage": "Upping in progress ...",
   "incidentTransactions": "History",
-  "afterCreateAccount": "Account created. please check mail to verify. thanks"
+  "afterCreateAccount": "Account created. please check mail to verify. thanks",
+  "NoLocationPermissionAllowed": "Please allow location permission, So that we can fetch the incidents",
+  "givePermission": "Give Required Permission",
+  "resetPassword": "Reset Password",
+  "passwordChanged": "Password has been changed",
+  "resetPasswordfailed": "Reset password failed",
+  "sendCodeFailed": "Sending code failed",
+  "incident": "Incident"
+
+
 
 
 

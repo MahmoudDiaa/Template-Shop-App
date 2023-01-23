@@ -95,6 +95,18 @@
   "incidentUppedSuccessMessage": "تم التصعيد بنجاح",
   "incidentUppingInProgressMessage": "جاري تصعيد البلاغ...",
   "incidentTransactions": "العمليات",
-  "afterCreateAccount": "تم إنشاء الحساب. تفقد بريدك الإلكتروني للتأكيد. شكراً"
+  "afterCreateAccount": "تم إنشاء الحساب. تفقد بريدك الإلكتروني للتأكيد. شكراً",
+  "NoLocationPermissionAllowed": "من فضلك اسمح للتطبيق بالتعرف على الموقع. حتى نتمكن من جلب بيانات البلاغات ىالقريبة منك",
+  "givePermission": "إعطاء الصلاحية المطلوبة",
+  "resetPassword": "تعيين كلمة المرور",
+  "passwordChanged": "تم تعيين كلمة المرور",
+  "resetPasswordfailed": "فشلت تعيين كلمة المرور",
+  "sendCodeFailed": "فشل إرسال الكود",
+  "incident": "بلاغ"
+
+
+
+
+
 
 }
