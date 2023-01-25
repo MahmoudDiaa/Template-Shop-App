@@ -40,7 +40,7 @@ class UserApi {
       firstName, lastName, email, userName, password) async {
     try {
       final res = await _dioClient.post(
-          '${Endpoints.signUp}?frontVerifyUrl=https://orbitsdc.com/auth/signin/verifyemail',
+          '${Endpoints.signUp}?frontVerifyUrl=http://51.15.23.9:8085/auth/signin/verifyemail',
           data: jsonEncode({
             'UserName': userName,
             'Email': email,

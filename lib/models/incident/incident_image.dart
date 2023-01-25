@@ -23,6 +23,6 @@ class IncidentImage {
     if (this.imageUrl.isValidUrl())
       return this.imageUrl;
     else
-      return 'https://orbitsdc.com/Uploads/Incidents/${this.imageUrl}';
+      return 'http://51.15.23.9:8085/Uploads/Incidents/${this.imageUrl}';
   }
 }
