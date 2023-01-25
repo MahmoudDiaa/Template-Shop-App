@@ -8,11 +8,11 @@
         android:minSdkVersion="20"
         android:targetSdkVersion="33" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -26,9 +26,11 @@
 
     <application
         android:name="android.app.Application"
+        android:allowClearUserData="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
-        android:label="flutter_boilerplate_orbits" >
+        android:label="flutter_boilerplate_orbits"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name="com.iotecksolutions.flutter_boilerplate_orbits.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

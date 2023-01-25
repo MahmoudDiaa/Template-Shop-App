@@ -1,8 +1,8 @@
 import 'package:boilerplate/data/respository/priority_repository.dart';
+import 'package:boilerplate/models/PriorityLevels%20/Priority_level_list.dart';
 import 'package:boilerplate/stores/error/error_store.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../models/priority/priority_list.dart';
 import '../../utils/dio/dio_error_util.dart';
 
 part 'priority_store.g.dart';
@@ -20,15 +20,15 @@ abstract class _PriorityStore with Store {
   _PriorityStore(PriorityRepository priorityRepository)
       : this._priorityRepository = priorityRepository;
 
-  static ObservableFuture<PriorityList?> emptyPriorityResponse =
+  static ObservableFuture<PriorityLevelList?> emptyPriorityResponse =
       ObservableFuture.value(null);
 
   @observable
-  ObservableFuture<PriorityList?> fetchPrioritiesFuture =
-      ObservableFuture<PriorityList?>(emptyPriorityResponse);
+  ObservableFuture<PriorityLevelList?> fetchPrioritiesFuture =
+      ObservableFuture<PriorityLevelList?>(emptyPriorityResponse);
 
   @observable
-  PriorityList? priorityList;
+  PriorityLevelList? priorityList;
 
   @observable
   bool success = false;

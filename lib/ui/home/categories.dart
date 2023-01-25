@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:boilerplate/data/sharedpref/constants/preferences.dart';
+import 'package:boilerplate/models/PriorityLevels%20/priorrity_level.dart';
 import 'package:boilerplate/models/priority/priority.dart';
 import 'package:boilerplate/stores/category/category_store.dart';
 import 'package:boilerplate/utils/routes/routes.dart';
@@ -63,7 +64,7 @@ class _CategoryListPageState extends State<CategoryListPage> {
   Category? selectedCat;
   SubCategory? selectedSubCat;
 
-  StreamController<Priority?>? stream = StreamController<Priority?>();
+  StreamController<PriorityLevel?>? stream = StreamController<PriorityLevel?>();
 
   @override
   Widget build(BuildContext context) {

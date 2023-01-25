@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:3:4-35:19
+INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:5:4-40:19
 MERGED from [:geolocator_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:19
 MERGED from [:geolocator_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:19
 MERGED from [:image_picker_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
@@ -13,8 +13,8 @@ MERGED from [androidx.window:window:1.0.0-beta04] /Users/mahmouddiaa/.gradle/cac
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/mahmouddiaa/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.android.gms:play-services-location:20.0.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/2d36fe3092f409c15b974a0b68b21147/transformed/jetified-play-services-location-20.0.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:20.0.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/2d36fe3092f409c15b974a0b68b21147/transformed/jetified-play-services-location-20.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:36:5-42:19
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/67879e22102fb65217d23e347f5e9c0d/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:5:5-20
@@ -28,19 +28,25 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mahm
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/d363e3b5616f580c766e3e2b3c05f27d/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:4:9-51
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:6:9-51
+	android:allowClearUserData
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:8:8-41
 	android:icon
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:6:9-43
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:11:9-43
+	tools:replace
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:7:9-38
+	android:usesCleartextTraffic
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:9:8-43
 	android:name
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:5:9-42
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:10:9-42
 manifest
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
 MERGED from [:geolocator_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-19:12
-MERGED from [:google_maps_flutter] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/google_maps_flutter/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:google_maps_flutter_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/google_maps_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:image_picker_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:sqflite] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/sqflite/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
@@ -60,7 +66,7 @@ MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.0] /Users/mahmouddi
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/bee92debb307e81f68d6e53348995370/transformed/jetified-exoplayer-dash-2.18.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/06eb0bfaa935c4c3b607f741449c36f4/transformed/jetified-exoplayer-smoothstreaming-2.18.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:17:1-26:12
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:17:1-44:12
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:17:1-44:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/67879e22102fb65217d23e347f5e9c0d/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/601d4158b382ad9f634d3bbb23a34c83/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:16:1-26:12
@@ -85,31 +91,39 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/mahmouddia
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/b0ed3bc1190a335fc620be73cef0fa31/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/ed9734c73cdec898947618088fbe87b0/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/58e3540d7f5a5bac6af9a8f8fab44363/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
-INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
 	package
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:2:5-61
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:3:5-61
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:2:5-51
 	android:versionCode
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-36:12
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:1-41:12
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:4:22-64
 uses-sdk
 INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
 MERGED from [:geolocator_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:geolocator_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:google_maps_flutter] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/google_maps_flutter/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
-MERGED from [:google_maps_flutter] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/google_maps_flutter/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:google_maps_flutter_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/google_maps_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:google_maps_flutter_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/google_maps_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:image_picker_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:image_picker_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
@@ -148,8 +162,8 @@ MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.0] /Use
 MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/06eb0bfaa935c4c3b607f741449c36f4/transformed/jetified-exoplayer-smoothstreaming-2.18.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/67879e22102fb65217d23e347f5e9c0d/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:4:5-43
@@ -209,49 +223,49 @@ INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android
 		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml
 activity#com.iotecksolutions.flutter_boilerplate_orbits.MainActivity
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:7:9-27:20
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:12:9-32:20
 	android:launchMode
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:10:13-43
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:15:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:13:13-47
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:18:13-47
 	android:windowSoftInputMode
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:14:13-55
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:19:13-55
 	android:exported
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:9:13-36
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:14:13-36
 	android:configChanges
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:12:13-163
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:17:13-163
 	android:theme
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:11:13-47
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:16:13-47
 	android:name
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:8:13-41
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:13:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:19:13-22:17
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:24:13-27:17
 	android:resource
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:21:15-52
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:26:15-52
 	android:name
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:20:15-70
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:25:15-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:23:13-26:29
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:28:13-31:29
 action#android.intent.action.MAIN
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:24:17-68
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:29:17-68
 	android:name
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:25:17-76
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:30:17-76
 	android:name
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:25:27-74
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:30:27-74
 meta-data#flutterEmbedding
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:30:9-32:33
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:35:9-37:33
 	android:value
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:32:13-30
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:37:13-30
 	android:name
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:31:13-44
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:36:13-44
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:33:8-34:69
+ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:38:8-39:69
 	android:value
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:34:12-67
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:39:12-67
 	android:name
-		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:33:19-64
+		ADDED from /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/android/app/src/main/AndroidManifest.xml:38:19-64
 uses-permission#android.permission.FOREGROUND_SERVICE
 ADDED from [:geolocator_android] /Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-77
 	android:name
@@ -322,34 +336,30 @@ ADDED from [androidx.window:window:1.0.0-beta04] /Users/mahmouddiaa/.gradle/cach
 		ADDED from [androidx.window:window:1.0.0-beta04] /Users/mahmouddiaa/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/02b99fdd74663f4e2f45bdd500de7df6/transformed/jetified-exoplayer-common-2.18.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/02b99fdd74663f4e2f45bdd500de7df6/transformed/jetified-exoplayer-common-2.18.0/AndroidManifest.xml:24:5-79
 	android:name
 		ADDED from [com.google.android.exoplayer:exoplayer-core:2.18.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/cd667b6def246546afb527c5d378442a/transformed/jetified-exoplayer-core-2.18.0/AndroidManifest.xml:24:22-76
-uses-permission#android.permission.INTERNET
-ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:24:5-67
-	android:name
-		ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:24:22-64
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:26:5-28:35
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:27:9-41
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:27:9-41
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:28:9-32
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:28:9-32
 queries
-ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:30:5-34:15
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:30:5-34:15
 package#com.google.android.apps.maps
-ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:9-64
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:33:9-64
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:18-61
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:33:18-61
 uses-library#org.apache.http.legacy
-ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:39:9-41:40
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:39:9-41:40
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:41:13-37
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:41:13-37
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:18.0.2] /Users/mahmouddiaa/.gradle/caches/transforms-3/42e8e193afdde6a89d257fba9624cf99/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:40:13-50
+		ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/mahmouddiaa/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:40:13-50
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/mahmouddiaa/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
 	android:exported

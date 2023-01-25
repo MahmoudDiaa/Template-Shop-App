@@ -5,6 +5,7 @@ class Priority {
   String? arabicName;
   String? englishName;
 
+
   Priority({
     this.id,
     this.arabicName,

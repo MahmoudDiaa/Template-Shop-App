@@ -1,7 +1,9 @@
 import 'package:boilerplate/data/local/datasources/incident/incident_datasource.dart';
 import 'package:boilerplate/data/local/datasources/post/post_datasource.dart';
+import 'package:boilerplate/data/local/datasources/priorities/priority_datasource.dart';
 import 'package:boilerplate/data/network/apis/incident/incident_api.dart';
 import 'package:boilerplate/data/network/apis/posts/post_api.dart';
+import 'package:boilerplate/data/network/apis/priorities/priorities_api.dart';
 import 'package:boilerplate/data/network/dio_client.dart';
 import 'package:boilerplate/data/network/rest_client.dart';
 import 'package:boilerplate/data/repository.dart';
@@ -65,9 +67,11 @@ Future<void> setupLocator() async {
       SubCategoryApi(getIt<DioClient>(), getIt<SharedPreferenceHelper>()));
   getIt.registerSingleton(
       IncidentApi(getIt<DioClient>(), getIt<SharedPreferenceHelper>()));
+  getIt.registerSingleton(prioritiesApi(getIt<DioClient>(), getIt<SharedPreferenceHelper>()));
 
   // data sources
   getIt.registerSingleton(PostDataSource(await getIt.getAsync<Database>()));
+  getIt.registerSingleton(PrioritiesDataSource(await getIt.getAsync<Database>()));
   getIt.registerSingleton(CategoryDataSource(await getIt.getAsync<Database>()));
   getIt.registerSingleton(
       SubCategoryDataSource(await getIt.getAsync<Database>()));
@@ -89,7 +93,7 @@ Future<void> setupLocator() async {
   ));
   getIt.registerSingleton(
       IncidentRepository(getIt<IncidentDataSource>(), getIt<IncidentApi>()));
-  getIt.registerSingleton(PriorityRepository());
+  getIt.registerSingleton(PriorityRepository(getIt<PrioritiesDataSource>(),getIt<prioritiesApi>()));
 
   // stores:--------------------------------------------------------------------
   getIt.registerSingleton(LanguageStore(getIt<Repository>()));

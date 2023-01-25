@@ -20,13 +20,13 @@ mixin _$PriorityStore on _PriorityStore, Store {
       Atom(name: '_PriorityStore.fetchPrioritiesFuture');
 
   @override
-  ObservableFuture<PriorityList?> get fetchPrioritiesFuture {
+  ObservableFuture<PriorityLevelList?> get fetchPrioritiesFuture {
     _$fetchPrioritiesFutureAtom.reportRead();
     return super.fetchPrioritiesFuture;
   }
 
   @override
-  set fetchPrioritiesFuture(ObservableFuture<PriorityList?> value) {
+  set fetchPrioritiesFuture(ObservableFuture<PriorityLevelList?> value) {
     _$fetchPrioritiesFutureAtom.reportWrite(value, super.fetchPrioritiesFuture,
         () {
       super.fetchPrioritiesFuture = value;
@@ -36,13 +36,13 @@ mixin _$PriorityStore on _PriorityStore, Store {
   final _$priorityListAtom = Atom(name: '_PriorityStore.priorityList');
 
   @override
-  PriorityList? get priorityList {
+  PriorityLevelList? get priorityList {
     _$priorityListAtom.reportRead();
     return super.priorityList;
   }
 
   @override
-  set priorityList(PriorityList? value) {
+  set priorityList(PriorityLevelList? value) {
     _$priorityListAtom.reportWrite(value, super.priorityList, () {
       super.priorityList = value;
     });

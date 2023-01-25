@@ -8,12 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import '../constants/enums.dart';
+import '../models/PriorityLevels /priorrity_level.dart';
 import '../models/priority/priority.dart';
 import '../stores/priority/priority_store.dart';
 import 'progress_indicator/progress_indicator_text_widget.dart';
 
 class _PriorityListWidget extends StatefulWidget {
-  void Function(Priority?)? onSelectedPriorityChanged;
+  void Function(PriorityLevel?)? onSelectedPriorityChanged;
   PriorityListViewMode priorityListView;
 
   int? initialSelectedId;
@@ -146,9 +147,9 @@ class _PriorityListWidgetState extends State<_PriorityListWidget> {
           );
   }
 
-  Priority? _selectedPriority;
+  PriorityLevel? _selectedPriority;
 
-  _onSubCategoryTap(Priority? priority) {
+  _onSubCategoryTap(PriorityLevel? priority) {
     setState(() {
       if (_selectedPriority?.id == priority?.id) {
         _selectedPriority = null;
@@ -172,12 +173,12 @@ class _PriorityListWidgetState extends State<_PriorityListWidget> {
       },
       child: Row(
         children: [
-          Radio<Priority>(
+          Radio<PriorityLevel>(
             value: _priorityStore.priorityList!.priorities![position],
             toggleable: true,
             autofocus: true,
             groupValue: _selectedPriority,
-            onChanged: (Priority? value) {
+            onChanged: (PriorityLevel? value) {
               // setState(() {
               // selectedMainCategory = value;
               // widget.selectedCategoryChanged(value.id);
@@ -186,7 +187,7 @@ class _PriorityListWidgetState extends State<_PriorityListWidget> {
             },
           ),
           Text(
-            '${_priorityStore.priorityList?.priorities?[position].localizedName(_languageStore.locale)}',
+            _languageStore.locale=='en'?'${_priorityStore.priorityList?.priorities?[position].englishName}':'${_priorityStore.priorityList?.priorities?[position].arabicName}',
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(
@@ -202,8 +203,7 @@ class _PriorityListWidgetState extends State<_PriorityListWidget> {
       dense: true,
       leading: Icon(Icons.cloud_circle),
       title: Text(
-        '${_priorityStore.priorityList?.priorities?[position].localizedName(_languageStore.locale)}',
-        maxLines: 1,
+        _languageStore.locale=='en'?'${_priorityStore.priorityList?.priorities?[position].englishName}':'${_priorityStore.priorityList?.priorities?[position].arabicName}',        maxLines: 1,
         overflow: TextOverflow.ellipsis,
         softWrap: false,
         style: _priorityStore.priorityList?.priorities?[position]?.id ==
@@ -212,8 +212,7 @@ class _PriorityListWidgetState extends State<_PriorityListWidget> {
             : Theme.of(context).textTheme.bodyText1,
       ),
       subtitle: Text(
-        '${_priorityStore.priorityList?.priorities?[position].localizedName(_languageStore.locale)}',
-        maxLines: 1,
+        _languageStore.locale=='en'?'${_priorityStore.priorityList?.priorities?[position].englishName}':'${_priorityStore.priorityList?.priorities?[position].arabicName}',        maxLines: 1,
         overflow: TextOverflow.ellipsis,
         softWrap: false,
       ),
@@ -251,14 +250,14 @@ class _PriorityListWidgetState extends State<_PriorityListWidget> {
   }
 }
 
-class PriorityFormField extends FormField<Priority> {
+class PriorityFormField extends FormField<PriorityLevel> {
   PriorityListViewMode priorityListView;
-  Function(Priority?)? onChange;
-  StreamController<Priority?>? stream;
+  Function(PriorityLevel?)? onChange;
+  StreamController<PriorityLevel?>? stream;
 
   PriorityFormField(
-      {required FormFieldSetter<Priority> onSaved,
-      required FormFieldValidator<Priority> validator,
+      {required FormFieldSetter<PriorityLevel> onSaved,
+      required FormFieldValidator<PriorityLevel> validator,
       int? initialSelectedId,
       //Category? initialValue,
       AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
@@ -270,7 +269,7 @@ class PriorityFormField extends FormField<Priority> {
             validator: validator,
             //initialValue: initialValue,
             autovalidateMode: autovalidateMode,
-            builder: (FormFieldState<Priority> state) {
+            builder: (FormFieldState<PriorityLevel> state) {
               return Container(
                 height: 50,
                 child: Stack(
