@@ -1,4 +1,0 @@
-#Wed Jan 25 16:56:18 EET 2023
-base.0=/Users/mahmouddiaa/StudioProjects/FieldMonitoringMobileApp/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
